@@ -6,11 +6,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContactosComponent } from './contactos/contactos.component';
+import { CabeceraComponent } from 'src/app/cabecera/cabecera.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContactosComponent
+    ContactosComponent,
+    CabeceraComponent
   ],
   imports: [
     BrowserModule,
