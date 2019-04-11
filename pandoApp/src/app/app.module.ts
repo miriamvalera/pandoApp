@@ -2,22 +2,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContactosComponent } from './contactos/contactos.component';
 import { CabeceraComponent } from 'src/app/cabecera/cabecera.component';
+import { FormsModule} from '@angular/forms';
+import { VotacionesComponent } from './votaciones/votaciones.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactosComponent,
+    VotacionesComponent,
     CabeceraComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
