@@ -1,0 +1,8 @@
+<h3>Crea una votacion</h3>
+<form #votacionForm="ngForm" (ngSubmit)="generaVotacion()">
+  <div><input type="text" placeholder="Nombre de la votación"></div>
+  <div><textarea placeholder="Describe tu proposicion"></textarea></div>
+  <div><input type="radio">Opcion1</div>
+  <div><input type="radio">Opcion2</div>
+  <div><button>Enviar</button></div>
+</form>
