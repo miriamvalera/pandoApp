@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { VotacionesComponent } from './votaciones/votaciones.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+    {path:'votaciones', component:VotacionesComponent,pathMatch:'full'}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

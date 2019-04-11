@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Voto } from '../modelos/voto';
+import { Router } from '@angular/router';
+import { VotacionesService } from '../servicios/votaciones.service';
 
 @Component({
   selector: 'votaciones',
@@ -7,31 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VotacionesComponent implements OnInit {
 
-  private _votaciones=[
-    new Voto{1,'ir a Cenar'},
-    new Voto{1,'ir a Comer'},
-    new Voto{1,'ir de Copas'}, 
-    new Voto{1,'ir a Pasear'} 
+  nuevaVotacion= new Voto(0,'null','Este restaurante es una mierda','si');
 
-  ];
-
-  constructor() { }
-
-  getVoto():Voto[]{
-  	return this._votaciones;
-  }
-
-  getVotoById(unVot){
-    return this._votaciones.find(function(aVot){
-      return aVot.tid==unVot;
-    });
-  }
+  constructor(private _votaServ:VotacionesService, private _router:Router) {}
+    
 
   ngOnInit() {
   }
 
-  generaVotacion(){
-
+  generaVotacion(elForm){
+    this._votaServ.addVotoToApi(this.nuevaVotacion).subscribe(unaVotacion =>{
+      console.log('respuesta post:',unaVotacion);
+      this._router.navigate(['/votaciones']);
+    });
   }
 
 }
