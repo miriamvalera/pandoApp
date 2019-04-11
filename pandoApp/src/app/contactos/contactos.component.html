@@ -1,8 +1,16 @@
-<div>
-  <h2>Contacto</h2>
-</div>
+<header></header>
 
 <div>
-  <span>{{app.img}}</span>
-  <span>{{app.name}}</span>
+  <h2>Contactos</h2>
 </div>
+
+<div *ngFor="let user of usuarios">
+  <table>
+    <tr>
+      <td> {{user.imgPerfil}} </td>
+      <td> {{user.name}}  </td>
+    </tr>
+  </table>
+</div>
+
+<!-- {{usuarios|json}} -->

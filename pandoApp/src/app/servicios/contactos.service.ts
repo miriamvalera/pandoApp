@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from 'selenium-webdriver/http';
 import { Observable } from 'rxjs/internal/Observable';
+import { Usuario } from 'src/app/modelos/usuario';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -9,15 +10,26 @@ import { Observable } from 'rxjs/internal/Observable';
 @Injectable({
   providedIn: 'root'
 })
+
 export class ContactosService {
 
-  constructor(private _http: HttpClient) { }
+  constructor() { }
 
-  geAppAPI():Observable<Contacto[]>{
-    return this._http.get<Contacto[]>('http://www.mocky.io/v2/5cadb0952f00000d343a96e8')
+  private _usuarios = [
+    new Usuario(23, ' Pepe', '****', 'Pepito','fotomia'),
+    new Usuario(23, ' Juan', '**********', 'Juanito','fotomia'),    
+    new Usuario(23, ' Pepe', '****', 'Pepito','fotomia'),
+    new Usuario(23, ' Juan', '**********', 'Juanito','fotomia'),    
+    new Usuario(23, ' Pepe', '****', 'Pepito','fotomia'),
+    new Usuario(23, ' Juan', '**********', 'Juanito','fotomia')
+  ];
+
+  getUsuarios() {
+    // console.log('Usuarios:', this._usuarios)
+    return this._usuarios;
   }
 
-
 }
+
 
 
