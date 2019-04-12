@@ -10,7 +10,7 @@ import { VotacionesComponent } from '../votaciones/votaciones.component';
 export class VotacionesService {
 
   private _votaciones=[
-    new Voto(1,'Este restaurante es una mierda', 'ir a Cenar', 'si') 
+    new Voto(1,'Este restaurante es una mierda', ['ir a Cenar','pepe'], 'si') 
   ];
 
   constructor(private _http:HttpClient) { }

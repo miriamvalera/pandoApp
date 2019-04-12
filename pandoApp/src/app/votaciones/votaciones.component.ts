@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Voto } from '../modelos/voto';
 import { Router } from '@angular/router';
 import { VotacionesService } from '../servicios/votaciones.service';
+import { FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'votaciones',
@@ -9,20 +10,31 @@ import { VotacionesService } from '../servicios/votaciones.service';
   styleUrls: ['./votaciones.component.scss']
 })
 export class VotacionesComponent implements OnInit {
+  opcionesVotos = [];
+  constructor(private _votaServ: VotacionesService, private _router: Router, private formBuilder: FormBuilder) { }
 
-  nuevaVotacion = new Voto(1,'Este restaurante es una mierda', 'ir a Cenar', 'si');
-
-  constructor(private _votaServ:VotacionesService, private _router:Router) {}
-    
+  votacionForm: FormGroup;
+  opciones: FormArray;
 
   ngOnInit() {
-  }
+    this.opciones= this.formBuilder.array([new FormControl()])
 
-  generaVotacion(votacionForm){
-    this._votaServ.addVotoToApi(this.nuevaVotacion).subscribe(unaVotacion =>{
-      console.log('respuesta post:',unaVotacion);
-      this._router.navigate(['/votaciones']);
+    this.votacionForm = new FormGroup({
+      titVotacion: new FormControl(),
+      descVotacion: new FormControl(),
+      opciones: this.opciones
     });
   }
+
+  generaVotacion() {
+    const campos = this.votacionForm.controls;
+    console.log('campos:',campos,this);
+  }
+
+  addOpcion(): void {
+    this.opciones = this.votacionForm.get('opciones') as FormArray;
+    this.opciones.push(new FormControl());
+  }
+
 
 }

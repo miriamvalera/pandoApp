@@ -1,9 +1,11 @@
-<h3>Crea una votacion</h3>
-<form #votacionForm="ngForm" (ngSubmit)="generaVotacion(votacionForm)">
-  <div><input type="text" [(ngModel)]="nuevaVotacion.tVotacion" name="tVotacion" placeholder="Nombre de la votación"></div>
-  <div><textarea [(ngModel)]="nuevaVotacion.descVot" name="descVot" placeholder="Describe tu proposicion"></textarea></div>
-  <div><input type="radio" [(ngModel)]="nuevaVotacion.opcionVot" name="opcionVot">Opcion1</div>
-  <div><input type="radio" [(ngModel)]="nuevaVotacion.opcionVot" name="opcionVot">Opcion2</div>
-  <div><button [disabled]="!votacionForm.valid">Enviar</button></div>
-  <div><button>+</button></div>
+<form [formGroup]="votacionForm" (ngSubmit)="generaVotacion()">
+  <div>
+    <input type="text" name="tVotacion" placeholder="Nombre de la votación" class="form-control" formControlName="titVotacion">
+  </div>
+  <div><textarea name="descVot" placeholder="Describe tu proposicion" formControlName="descVotacion"></textarea></div>
+  <div formArrayName="opciones" *ngFor="let aO of votacionForm.get('opciones').controls; let i = index;">
+      <input type="text" [formControlName]="i">
+    </div>
+  <div><button (click)="addOpcion()">+</button></div>
+  <div><button type="submit">Enviar</button></div>
 </form>
