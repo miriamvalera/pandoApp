@@ -10,7 +10,7 @@ import { VotacionesService } from '../servicios/votaciones.service';
 })
 export class VotacionesComponent implements OnInit {
 
-  nuevaVotacion= new Voto(0,'null','Este restaurante es una mierda','si');
+
 
   constructor(private _votaServ:VotacionesService, private _router:Router) {}
     
