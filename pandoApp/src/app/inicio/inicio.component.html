@@ -13,19 +13,6 @@
       <input type="checkbox" class="form-check-input" id="exampleCheck1">
       <label class="form-check-label" for="exampleCheck1">Recuérdame</label>
     </div>
-    <button [disabled]="!tareaForm.valid" type="submit" class="btn btn-primary">Entrar</button>
+    <button [routerLink]="['/contactos']" [disabled]="!tareaForm.valid" type="submit" class="btn btn-primary">Entrar</button>
   </form>
 
-  <!-- 
-<form #tareaForm="ngForm" (ngSubmit)="guardarUsuario()"> 
-  <div>
-    <input [(ngModel)]="nuevoUsuario.email_username" type="text" min="1" max="50" placeholder="user" name="time" required>
-  </div>
-  <div>
-    <input [(ngModel)]="nuevoUsuario.pssw" type="password" placeholder="password" name="proy" required>
-  </div>
-
-  <div>
-    <button [disabled]="!tareaForm.valid">Enviar</button>
-  </div>
-</form> -->

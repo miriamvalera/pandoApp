@@ -5,10 +5,11 @@ import { ContactosComponent } from 'src/app/contactos/contactos.component';
 import { InicioComponent } from './inicio/inicio.component';
 
 const routes: Routes = [
-  {path:'inicio', component:InicioComponent,pathMatch:'full'},
-  {path:'contactos', component:ContactosComponent,pathMatch:'full'},
-  
-  {path:'votaciones', component:VotacionesComponent,pathMatch:'full'}
+  { path: 'login', component: InicioComponent, pathMatch: 'full' },
+  { path: 'contactos', component: ContactosComponent, pathMatch: 'full' },
+
+  { path: 'votaciones', component: VotacionesComponent, pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];
 
 @NgModule({
