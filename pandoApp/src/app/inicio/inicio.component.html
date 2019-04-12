@@ -20,8 +20,10 @@
       <input type="checkbox" class="form-check-input" id="exampleCheck1">
       <label class="form-check-label" for="exampleCheck1">Recuérdame</label>
     </div>
-    <button [routerLink]="['/contactos']" [disabled]="!tareaForm.valid" type="submit" class="btn btn-primary">Entrar</button>
-    <a [routerLink]="['/registro']">Registrate</a>
+    <div class="botoncito">
+      <a [routerLink]="['/registro']">Registrate</a>
+      <button [routerLink]="['/contactos']" [disabled]="!tareaForm.valid" type="submit" class="btn btn-primary">Entrar</button>
+    </div>
   </form>
 </div>
 </div>

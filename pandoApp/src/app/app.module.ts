@@ -11,6 +11,7 @@ import { CabeceraComponent } from 'src/app/cabecera/cabecera.component';
 import { VotacionesComponent } from './votaciones/votaciones.component';
 import { RegistroComponent } from './registro/registro.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { InicioComponent } from './inicio/inicio.component';
     VotacionesComponent,
     CabeceraComponent,
     RegistroComponent,
-    InicioComponent
+    InicioComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
