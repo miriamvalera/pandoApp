@@ -8,13 +8,15 @@ import { ContactosComponent } from './contactos/contactos.component';
 import { CabeceraComponent } from 'src/app/cabecera/cabecera.component';
 import { FormsModule} from '@angular/forms';
 import { VotacionesComponent } from './votaciones/votaciones.component';
+import { InicioComponent } from './inicio/inicio.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactosComponent,
     VotacionesComponent,
-    CabeceraComponent
+    CabeceraComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
