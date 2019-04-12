@@ -1,0 +1,13 @@
+<div *ngFor="let chat of chats" class="col-12">
+    <div class="row">
+      <figure>
+        <img class="col-2" [src]="getUsuarioById(chat.partner)?.imgPerfil">
+      </figure>
+      <div class="col-4">{{getUsuarioById(chat.partner)?.name}}</div>
+      <div class="col-6">{{getUsuarioById(chat.partner)?.texto}}</div>
+    </div>
+  </div>
+  <div>
+    <!-- <button [routerLink]="['/chats']">CHATS</button> -->
+  </div>
+  <!-- {{usuarios|json}} -->
