@@ -9,13 +9,17 @@ import { AppComponent } from './app.component';
 import { ContactosComponent } from './contactos/contactos.component';
 import { CabeceraComponent } from 'src/app/cabecera/cabecera.component';
 import { VotacionesComponent } from './votaciones/votaciones.component';
+import { RegistroComponent } from './registro/registro.component';
+import { InicioComponent } from './inicio/inicio.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactosComponent,
     VotacionesComponent,
-    CabeceraComponent
+    CabeceraComponent,
+    RegistroComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,

@@ -10,9 +10,6 @@ import { FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms';
   styleUrls: ['./votaciones.component.scss']
 })
 export class VotacionesComponent implements OnInit {
-
-  nuevaVotacion = new Voto(0, 'null', ['Este restaurante es una mierda'], 'si');
-
   opcionesVotos = [];
   constructor(private _votaServ: VotacionesService, private _router: Router, private formBuilder: FormBuilder) { }
 

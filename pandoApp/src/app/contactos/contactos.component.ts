@@ -16,7 +16,10 @@ export class ContactosComponent implements OnInit {
   constructor(private _contactosServ: ContactosService) { }
 
   ngOnInit() {
-    this.usuarios = this._contactosServ.getUsuarios();
+    this._contactosServ.getUsuariosAPI().subscribe( usuariosDelServ => {
+      this.usuarios = usuariosDelServ;
+    });
+
   }
 
 }

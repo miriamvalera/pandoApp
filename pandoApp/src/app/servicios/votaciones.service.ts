@@ -25,7 +25,7 @@ export class VotacionesService {
    } 
 
    addVotoToApi(nuevaVotacion: Voto):Observable<Voto>{
-     return this._http.post<Voto>('http://www.mocky.io/v2/5caf3ca53400006c24ab71de',nuevaVotacion);
+     return this._http.post<Voto>('http://www.mocky.io/v2/5caf5bd33400006f27ab72e7',nuevaVotacion);
     
   }
 }

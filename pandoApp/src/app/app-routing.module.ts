@@ -1,9 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { VotacionesComponent } from './votaciones/votaciones.component';
+import { ContactosComponent } from './contactos/contactos.component';
+import { RegistroComponent } from './registro/registro.component';
+import { InicioComponent } from './inicio/inicio.component';
 
 const routes: Routes = [
-    {path:'votaciones', component:VotacionesComponent,pathMatch:'full'}
+  {path: 'login', component: InicioComponent, pathMatch: 'full'},
+  {path:'inicio', component:InicioComponent,pathMatch:'full'},
+  {path:'registro', component: RegistroComponent, pathMatch:'full'},
+  {path:'contactos', component: ContactosComponent, pathMatch:'full'},
+  {path:'votaciones', component: VotacionesComponent, pathMatch:'full'},
+  {path: '', redirectTo: 'login', pathMatch: 'full' }
 ];
 
 @NgModule({
