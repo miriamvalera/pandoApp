@@ -3,7 +3,7 @@
   <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12 votacion-form">
     <form class="" [formGroup]="votacionForm" (ngSubmit)="generaVotacion()">
       <div class="cnt-titVotacion">
-        <input type="text" name="tVotacion" placeholder="Nombre de la votación" class="form-control col-12"
+        <input type="text" name="tVotacion" placeholder="Titulo de la votación" class="form-control col-12"
           formControlName="titVotacion">
       </div>
       <div  class="cnt-descVotacion">
@@ -12,14 +12,14 @@
       </div>
       <div class="cnt-opcVotacion row">
         <div class="col-md-4 col-sm-12" formArrayName="opciones" *ngFor="let aO of votacionForm.get('opciones').controls; let i = index;">
-          <input class="col-12" type="text" [formControlName]="i" placeholder="Escribe Opcion">
+          <input class="col-12" type="text" [formControlName]="i" placeholder="Escribe una Opción">
         </div>
       </div>
 
       <div class="cnt-btnOpcion row">
-          <button class="col-5 add" (click)="addOpcion()">Añadir Opcion</button>
+          <button class="col-5 add" (click)="addOpcion()">Añadir Opción</button>
           <div class="col-2"></div>
-          <button class="col-5 remove" (click)="removeOpcion()">Quitar Opcion</button>
+          <button class="col-5 remove" (click)="removeOpcion()">Quitar Opción</button>
           <button type="submit" class="col-12 enviar">Enviar</button>
       </div>
     </form>
