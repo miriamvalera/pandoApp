@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/internal/Observable';
+import { Observable } from 'rxjs';
 import { Usuario } from 'src/app/modelos/usuario';
 import { HttpClient } from '@angular/common/http';
 
@@ -13,20 +13,21 @@ import { HttpClient } from '@angular/common/http';
 
 export class ContactosService {
 
-  constructor() { }
+  constructor(private _http:HttpClient) { }
 
-  private _usuarios = [
-    new Usuario(23, ' Pepe', '****', 'Pepito','fotomia'),
-    new Usuario(23, ' Juan', '**********', 'Juanito','fotomia'),    
-    new Usuario(23, ' Pepe', '****', 'Pepito','fotomia'),
-    new Usuario(23, ' Juan', '**********', 'Juanito','fotomia'),    
-    new Usuario(23, ' Pepe', '****', 'Pepito','fotomia'),
-    new Usuario(23, ' Juan', '**********', 'Juanito','fotomia')
-  ];
+  // private _usuarios = [
+  //   // new Usuario(23, ' Pepe', '****', 'Pepito','fotomia'),
+  //   // new Usuario(23, ' Juan', '**********', 'Juanito','fotomia'),    
+  //   // new Usuario(23, ' Pepe', '****', 'Pepito','fotomia'),
+  //   // new Usuario(23, ' Juan', '**********', 'Juanito','fotomia'),    
+  //   // new Usuario(23, ' Pepe', '****', 'Pepito','fotomia'),
+  //   // new Usuario(23, ' Juan', '**********', 'Juanito','fotomia')
+  // ];
 
-  getUsuarios() {
+  getUsuariosAPI():Observable<Usuario[]>{
     // console.log('Usuarios:', this._usuarios)
-    return this._usuarios;
+    // return this._usuarios;
+    return this._http.get<Usuario[]>('http://www.mocky.io/v2/5cb03e6f3100006c00e132bb');
   }
 
 }

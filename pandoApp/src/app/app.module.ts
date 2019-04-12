@@ -9,6 +9,7 @@ import { CabeceraComponent } from 'src/app/cabecera/cabecera.component';
 import { FormsModule} from '@angular/forms';
 import { VotacionesComponent } from './votaciones/votaciones.component';
 import { RegistroComponent } from './registro/registro.component';
+import { InicioComponent } from './inicio/inicio.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { RegistroComponent } from './registro/registro.component';
     ContactosComponent,
     VotacionesComponent,
     CabeceraComponent,
-    RegistroComponent
+    RegistroComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,

@@ -3,13 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { VotacionesComponent } from './votaciones/votaciones.component';
 import { ContactosComponent } from './contactos/contactos.component';
 import { RegistroComponent } from './registro/registro.component';
+import { InicioComponent } from './inicio/inicio.component';
 
 const routes: Routes = [
+  {path:'inicio', component:InicioComponent,pathMatch:'full'},
   {path:'registro', component: RegistroComponent, pathMatch:'full'},
   {path:'contactos', component: ContactosComponent, pathMatch:'full'},
   {path:'votaciones', component: VotacionesComponent, pathMatch:'full'},
-  {path:'', component: ContactosComponent, pathMatch:'full'}
-];
+  {path:'', component: ContactosComponent, pathMatch:'full'},
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
