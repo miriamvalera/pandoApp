@@ -1,13 +1,28 @@
-<div class="container">
-<form [formGroup]="votacionForm" (ngSubmit)="generaVotacion()">
-  <div>
-    <input type="text" name="tVotacion" placeholder="Nombre de la votación" class="form-control" formControlName="titVotacion">
-  </div>
-  <div><textarea name="descVot" placeholder="Describe tu proposicion" formControlName="descVotacion"></textarea></div>
-  <div formArrayName="opciones" *ngFor="let aO of votacionForm.get('opciones').controls; let i = index;">
-      <input type="text" [formControlName]="i">
-    </div>
-  <div><button (click)="addOpcion()">+</button></div>
-  <div><button type="submit">Enviar</button></div>
-</form>
+<div class="row cont-form">
+  <div class="col-lg-3 col-md-2 col-sm-1 col-xs-0"></div>
+  <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12 votacion-form">
+    <form class="" [formGroup]="votacionForm" (ngSubmit)="generaVotacion()">
+      <div class="cnt-titVotacion">
+        <input type="text" name="tVotacion" placeholder="Nombre de la votación" class="form-control col-12"
+          formControlName="titVotacion">
+      </div>
+      <div  class="cnt-descVotacion">
+        <textarea class="col-12" name="descVot" placeholder="Describe tu proposicion" formControlName="descVotacion">
+        </textarea>
+      </div>
+      <div class="cnt-opcVotacion row">
+        <div class="col-md-4 col-sm-12" formArrayName="opciones" *ngFor="let aO of votacionForm.get('opciones').controls; let i = index;">
+          <input class="col-12" type="text" [formControlName]="i" placeholder="Escribe Opcion">
+        </div>
+      </div>
+
+      <div class="cnt-btnOpcion row">
+          <button class="col-5 add" (click)="addOpcion()">Añadir Opcion</button>
+          <div class="col-2"></div>
+          <button class="col-5 remove" (click)="removeOpcion()">Quitar Opcion</button>
+          <button type="submit" class="col-12 enviar">Enviar</button>
+      </div>
+    </form>
+  </div>  
+  <div class="col-lg-3 col-md-2 col-sm-1 col-xs-0"></div>
 </div>
