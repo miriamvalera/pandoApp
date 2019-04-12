@@ -1,5 +1,7 @@
 <h3>Inicio Sesión</h3>
-<form #tareaForm="ngForm" (ngSubmit)="guardarUsuario()">
+<img src="../../assets/img/arbol.png">
+<div>
+ <form #tareaForm="ngForm" (ngSubmit)="guardarUsuario()">
     <div class="form-group">
       <label for="exampleInputEmail1">Email</label>
       <input [(ngModel)]="nuevoUsuario.email_username" name="email_username" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="pandoapp@pandoapp.com">
@@ -14,5 +16,6 @@
       <label class="form-check-label" for="exampleCheck1">Recuérdame</label>
     </div>
     <button [routerLink]="['/contactos']" [disabled]="!tareaForm.valid" type="submit" class="btn btn-primary">Entrar</button>
+    <p [routerLink]="['/registro']">Registrate</p>
   </form>
-
+</div>
