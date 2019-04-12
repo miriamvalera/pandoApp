@@ -1,0 +1,10 @@
+figure{
+    text-align: center;
+    width: 2%;
+    img{
+        width: 100%;
+    }
+}
+div:nth-child(odd){
+    background: lightblue;
+}
