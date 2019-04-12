@@ -1,0 +1,17 @@
+<h3>Inicio Sesión</h3>
+
+<form #tareaForm="ngForm" (ngSubmit)="guardarUsuario()"> 
+  <div>
+    <input [(ngModel)]="nuevoUsuario.email_username" type="text" min="1" max="50" placeholder="user" name="time" required>
+  </div>
+  <div>
+    <input [(ngModel)]="nuevoUsuario.pssw" type="password" placeholder="password" name="proy" required>
+  </div>
+
+  <div>
+    <button [disabled]="!tareaForm.valid">Enviar</button>
+  </div>
+</form>
+
+<pre>{{nuevoUsuario|json}}</pre>
+<pre>{{tareaForm.valid}}</pre>
