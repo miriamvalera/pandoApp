@@ -10,7 +10,7 @@ import { VotacionesService } from '../servicios/votaciones.service';
 })
 export class VotacionesComponent implements OnInit {
 
-
+  nuevaVotacion = new Voto(1,'Este restaurante es una mierda', 'ir a Cenar', 'si');
 
   constructor(private _votaServ:VotacionesService, private _router:Router) {}
     
@@ -18,7 +18,7 @@ export class VotacionesComponent implements OnInit {
   ngOnInit() {
   }
 
-  generaVotacion(elForm){
+  generaVotacion(votacionForm){
     this._votaServ.addVotoToApi(this.nuevaVotacion).subscribe(unaVotacion =>{
       console.log('respuesta post:',unaVotacion);
       this._router.navigate(['/votaciones']);
