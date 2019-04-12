@@ -1,5 +1,9 @@
-<h3>Inicio Sesión</h3>
-<img src="../../assets/img/arbol.png">
+<!-- <h3>Inicio Sesión</h3> -->
+<div class="logs">
+  <img src="../../assets/img/arbol.png">
+  <h4>¿No os poneis de acuerdo?</h4>
+  <h5>¡Pon un PandoApp en tu vida!</h5>
+</div>
 <div>
  <form #tareaForm="ngForm" (ngSubmit)="guardarUsuario()">
     <div class="form-group">
@@ -16,6 +20,6 @@
       <label class="form-check-label" for="exampleCheck1">Recuérdame</label>
     </div>
     <button [routerLink]="['/contactos']" [disabled]="!tareaForm.valid" type="submit" class="btn btn-primary">Entrar</button>
-    <p [routerLink]="['/registro']">Registrate</p>
+    <a [routerLink]="['/registro']">Registrate</a>
   </form>
 </div>
