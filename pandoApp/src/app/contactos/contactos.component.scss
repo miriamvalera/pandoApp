@@ -1,15 +1,21 @@
-$color-lightblue:lightblue;
-figure{
-    text-align: center;
-    width: 2%;
     img{
-        width: 100%;
-        border-radius:2 
+        border: solid 1px #3ca97a;
+        border-radius:2%;
+        display: flex;
+        align-items: center;
+        object-fit: contain;
+        height: 100px;
     }
-}
-// div:nth-child(odd){
-//     background: $color-lightblue ;
-// }
-// .container{
-//     background: coral;
-// }
+    p{
+        display: flex;
+        align-items: center;
+    }
+    .contacto{
+        padding: 10px 20px;
+        box-shadow: 0px 0px 2px #3ca97a;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        border: solid 1px #3ca97a; 
+    }
+
