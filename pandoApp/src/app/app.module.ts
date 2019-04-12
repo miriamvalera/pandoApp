@@ -8,6 +8,7 @@ import { ContactosComponent } from './contactos/contactos.component';
 import { CabeceraComponent } from 'src/app/cabecera/cabecera.component';
 import { FormsModule} from '@angular/forms';
 import { VotacionesComponent } from './votaciones/votaciones.component';
+import { RegistroComponent } from './registro/registro.component';
 import { InicioComponent } from './inicio/inicio.component';
 
 @NgModule({
@@ -16,6 +17,7 @@ import { InicioComponent } from './inicio/inicio.component';
     ContactosComponent,
     VotacionesComponent,
     CabeceraComponent,
+    RegistroComponent,
     InicioComponent
   ],
   imports: [
