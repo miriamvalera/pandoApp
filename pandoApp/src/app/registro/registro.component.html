@@ -1,0 +1,9 @@
+<h2>Registrate</h2>
+<form #registroForm="ngForm" (ngSubmit)="generaUsuario(registroForm)">
+    <div><input type="text" [(ngModel)]="nuevoUsuario.name" name="name" placeholder="Nombre de la votación"></div>
+    <div><input [(ngModel)]="nuevoUsuario.email" name="email" placeholder="Describe tu proposicion"></div>
+    <div><input type="text" [(ngModel)]="nuevoUsuario.pssw" name="pssw" placeholder="Contraseña"></div>
+    <div><input type="text" [(ngModel)]="nuevoUsuario.pssw" name="pssw2" placeholder="Repite la Contraseña"></div>
+    <div><input type="file" name="imgPerfil" accept="img/*"></div>
+    <div><button [disabled]="!registroForm.valid">Enviar</button></div>
+  </form>
