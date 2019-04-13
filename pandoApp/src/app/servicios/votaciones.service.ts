@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class VotacionesService {
 
   private _votaciones=[
-   // new Voto(1,'Este restaurante es una mierda', ['ir a Cenar','pepe'], 'si') 
+    new Voto(1,'Este restaurante es una mierda', ['ir a Cenar','pepe'], 'si') 
   ];
 
   constructor(private _http:HttpClient) { }
@@ -23,10 +23,8 @@ export class VotacionesService {
     this._votaciones.push(votaciones);
    } 
 
-   addVotoToApi():Observable<Voto[]>{
-     let mock = this._http.get<Voto[]>('http://www.mocky.io/v2/5caf5bd33400006f27ab72e7');
-     console.log("mock",mock);
-     return mock;
+   addVotoToApi(nuevaVotacion: Voto):Observable<Voto>{
+     return this._http.post<Voto>('http://www.mocky.io/v2/5caf5bd33400006f27ab72e7',nuevaVotacion);
     
   }
 }
