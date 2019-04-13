@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Chat } from '../modelos/chat';
-import { ContactosService } from '../servicios/contactos.service';
+import { ChatService } from '../servicios/chat.service';
 
 @Component({
   selector: 'chat',
@@ -9,26 +9,26 @@ import { ContactosService } from '../servicios/contactos.service';
 })
 export class ChatComponent implements OnInit {
    
-  chats:Chat[] = [
-    new Chat(0,[1,5,9] ),
-    new Chat(1,[10,50,90] ),
-  ];
+  // chats:Chat[] = [
+  //   new Chat(0,'jjkajjlk' ),
+  //   new Chat(1,'jjkajjlk' ),
+  // ];
 
-  usuarios = null;
+  conversaciones = null;
 
 
-  constructor(private _contactosServ: ContactosService) { }
+  constructor(private _chatServ: ChatService) { }
 
   ngOnInit() {
-    this._contactosServ.getUsuariosAPI().subscribe( usuariosDelServ => {
-      this.usuarios = usuariosDelServ;
+    this._chatServ.getUsuariosChatAPI().subscribe( chatsDelServ => {
+      this.conversaciones = chatsDelServ;
     });
 
   }
 
-  getUsuarioById(uid){
-    if(this.usuarios) return this.usuarios.find(unU => unU.id===uid);
-  }
+  // getUsuarioById(uid){
+  //   if(this.usuarios) return this.usuarios.find(unU => unU.id===uid);
+  // }
  
 
 }

@@ -1,6 +1,9 @@
 export class Chat{
     constructor(
-        public partner: number,
-        public mensajes: number[]
+        public imgPerfil: string,
+        public name: string,
+        public texto:string
+        
     ){}
 }
+
