@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Voto } from '../modelos/voto';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { VotacionesComponent } from '../votaciones/votaciones.component';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +9,7 @@ import { VotacionesComponent } from '../votaciones/votaciones.component';
 export class VotacionesService {
 
   private _votaciones=[
-    new Voto(1,'Este restaurante es una mierda', ['ir a Cenar','pepe'], 'si') 
+   // new Voto(1,'Este restaurante es una mierda', ['ir a Cenar','pepe'], 'si') 
   ];
 
   constructor(private _http:HttpClient) { }
@@ -24,8 +23,10 @@ export class VotacionesService {
     this._votaciones.push(votaciones);
    } 
 
-   addVotoToApi(nuevaVotacion: Voto):Observable<Voto>{
-     return this._http.post<Voto>('http://www.mocky.io/v2/5caf5bd33400006f27ab72e7',nuevaVotacion);
+   addVotoToApi():Observable<Voto[]>{
+     let mock = this._http.get<Voto[]>('http://www.mocky.io/v2/5caf5bd33400006f27ab72e7');
+     console.log("mock",mock);
+     return mock;
     
   }
 }
