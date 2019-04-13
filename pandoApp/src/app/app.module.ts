@@ -12,6 +12,7 @@ import { VotacionesComponent } from './votaciones/votaciones.component';
 import { RegistroComponent } from './registro/registro.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { ChatComponent } from './chat/chat.component';
+import { LogoAnimadoComponent } from './logo-animado/logo-animado.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ChatComponent } from './chat/chat.component';
     CabeceraComponent,
     RegistroComponent,
     InicioComponent,
-    ChatComponent
+    ChatComponent,
+    LogoAnimadoComponent
   ],
   imports: [
     BrowserModule,

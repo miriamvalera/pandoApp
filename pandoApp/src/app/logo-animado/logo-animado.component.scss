@@ -1,0 +1,48 @@
+.cnt-logo-svg{
+    height:224px;
+    position:relative;
+    width: 200px;
+    overflow:hidden;
+    border-radius:100%;
+    border: solid 1px #2fbe34;
+    left: 0;
+    right: 0;
+    margin: auto;
+    svg{
+        height: 230px;
+        position: absolute;
+        left: -20px;
+        bottom: 0;
+    }
+    path{
+        fill: #f4efe7;
+        stroke: #2fbe34;
+        stroke-width: 2;
+        stroke-dasharray: 50000px;
+        stroke-dashoffset:50000px; 
+        animation-name: draw;
+        animation-duration: 10s;        
+        animation-fill-mode: forwards; // Stay on the last frame
+        animation-iteration-count: 1; // Run only once
+        animation-timing-function: linear;
+    }
+
+}
+   
+  @keyframes draw {
+    40%{    
+      fill:#f4efe7;
+    }    
+    60%{    
+        fill:#f4efe7;
+      }
+    80%{
+      stroke-dashoffset: 0;    
+    }
+    100%{
+      stroke-dashoffset: 0;
+      opacity:1;
+      fill:#000;
+    }
+  }
+  

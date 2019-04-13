@@ -35,6 +35,12 @@ export class VotacionesComponent implements OnInit {
     this.opciones = this.votacionForm.get('opciones') as FormArray;
     this.opciones.push(new FormControl());
   }
+  removeOpcion(): void {
+    this.opciones = this.votacionForm.get('opciones') as FormArray;
+    if(this.opciones.length>1){
+      this.opciones.removeAt(this.opciones.length-1);
+    }
+  }
 
 
 }
