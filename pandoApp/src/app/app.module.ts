@@ -13,6 +13,7 @@ import { RegistroComponent } from './registro/registro.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { ChatComponent } from './chat/chat.component';
 import { LogoAnimadoComponent } from './logo-animado/logo-animado.component';
+import { ConversacionComponent } from './chat/conversacion/conversacion.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LogoAnimadoComponent } from './logo-animado/logo-animado.component';
     RegistroComponent,
     InicioComponent,
     ChatComponent,
-    LogoAnimadoComponent
+    LogoAnimadoComponent,
+    ConversacionComponent
   ],
   imports: [
     BrowserModule,

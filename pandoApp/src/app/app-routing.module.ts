@@ -5,6 +5,7 @@ import { ContactosComponent } from './contactos/contactos.component';
 import { RegistroComponent } from './registro/registro.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { ChatComponent } from './chat/chat.component';
+import { ConversacionComponent } from './chat/conversacion/conversacion.component';
 
 const routes: Routes = [
   {path: 'login', component: InicioComponent, pathMatch: 'full'},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path:'registro', component: RegistroComponent, pathMatch:'full'},
   {path:'contactos', component: ContactosComponent, pathMatch:'full'},
   {path:'votaciones', component: VotacionesComponent, pathMatch:'full'}, 
+  {path:'conversacion', component: ConversacionComponent, pathMatch:'full'}, 
   { path: '', redirectTo: 'inicio', pathMatch: 'full'}
 ];
 

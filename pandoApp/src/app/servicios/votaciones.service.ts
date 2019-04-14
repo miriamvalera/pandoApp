@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Voto } from '../modelos/voto';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { VotacionesComponent } from '../votaciones/votaciones.component';
 
 @Injectable({
   providedIn: 'root'

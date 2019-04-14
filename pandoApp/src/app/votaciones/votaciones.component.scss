@@ -16,13 +16,23 @@ $border-radius: 5px;
         .cnt{
             &-titVotacion{                
                 margin-bottom: 15px;
+                &.empty{
+                    input{
+                        border: solid 1px $color-red;                        
+                    }
+                }   
                 input{                   
                     outline: none;
                     border: solid 1px $color;
                 }
             }
             &-descVotacion{       
-                margin-bottom: 15px;           
+                margin-bottom: 15px;
+                &.empty{
+                    textarea{
+                        border: solid 1px $color-red;                        
+                    }
+                }           
                 textarea{
                     outline: none;
                     resize: none;
@@ -31,7 +41,12 @@ $border-radius: 5px;
                 }
             }
             &-opcVotacion{         
-                margin-bottom: 5px 0;  
+                margin-bottom: 5px 0;                  
+                &.empty{
+                    input{
+                        border: solid 1px $color-red;                        
+                    }
+                }   
                 input{                         
                     outline: none;
                     margin-bottom: 15px;

@@ -4,15 +4,15 @@
     <form class="" [formGroup]="votacionForm" (ngSubmit)="generaVotacion()">
       <div class="cnt-titVotacion">
         <input type="text" name="tVotacion" placeholder="Titulo de la votación" class="form-control col-12"
-          formControlName="titVotacion">
+          formControlName="titVotacion" required>
       </div>
       <div  class="cnt-descVotacion">
-        <textarea class="col-12" name="descVot" placeholder="Describe tu proposicion" formControlName="descVotacion">
+        <textarea class="col-12" name="descVot" placeholder="Describe tu proposicion" formControlName="descVotacion" required>
         </textarea>
       </div>
       <div class="cnt-opcVotacion row">
         <div class="col-md-4 col-sm-12" formArrayName="opciones" *ngFor="let aO of votacionForm.get('opciones').controls; let i = index;">
-          <input class="col-12" type="text" [formControlName]="i" placeholder="Escribe una Opción">
+          <input class="col-12" type="text" [formControlName]="i" placeholder="Escribe una Opción" required>
         </div>
       </div>
 

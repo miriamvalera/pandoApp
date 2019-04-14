@@ -11,6 +11,7 @@ import { FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms';
 })
 export class VotacionesComponent implements OnInit {
   opcionesVotos = [];
+
   constructor(private _votaServ: VotacionesService, private _router: Router, private formBuilder: FormBuilder) { }
 
   votacionForm: FormGroup;
@@ -24,11 +25,34 @@ export class VotacionesComponent implements OnInit {
       descVotacion: new FormControl(),
       opciones: this.opciones
     });
+
+    
+    //this._votaServ.addVotoToApi().subscribe( votServ =>{
+      //console.log(this.votacionForm);
+      //votServ.push(this.votacionForm)
+      //console.log("votServ",votServ);
+        // this.opcionesVotos.push(votServ);
+   // });
   }
 
   generaVotacion() {
     const campos = this.votacionForm.controls;
-    console.log('campos:',campos,this);
+
+    if(campos.titVotacion.value == null || campos.titVotacion.value.length<1){
+      document.querySelector(".cnt-titVotacion").classList.add('empty');
+    }else{      
+      document.querySelector(".cnt-titVotacion").classList.remove('empty');
+    }    
+    if(campos.descVotacion.value == null || campos.descVotacion.value.length<1){
+      document.querySelector(".cnt-descVotacion").classList.add('empty');
+    }else{      
+      document.querySelector(".cnt-descVotacion").classList.remove('empty');
+    }
+    if(campos.opciones.value.includes(null) || campos.opciones.value.length<1){
+      document.querySelector(".cnt-opcVotacion").classList.add('empty');
+    }else{      
+      document.querySelector(".cnt-opcVotacion").classList.remove('empty');
+    }
   }
 
   addOpcion(): void {
