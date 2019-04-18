@@ -24,28 +24,14 @@ export class ConversacionComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
 
-    this._route.params.subscribe(parametros => {
-      this.username = parseInt(parametros.id);
-      console.log("parametros", parametros.id);
-      //console.log("this.username", this.username);
-    });
-    var found = function (data) {
-      if (data !== undefined && this.username !== undefined) {
-        data.find(function (element) {
-          console.log("found", element.name);
-          if (data.id === this.username) {
-            return element.name;
-          }
-        });
-      }
 
-    }
     this._chatService.getMensajes().subscribe(data => {
       this.losmsgs = data;
     });
+
     this._chatService.getUsuariosChatAPI().subscribe(dat => {
       console.log("data.id ", dat)
-      found(dat);
+      this._chatService.found(dat);
     });
 
   }
