@@ -33,6 +33,7 @@ let initDb = function(callback) {
 	const options = {useMongoClient: true};
 
 	mongoose.connect(mongoURL,options); // connect to our database
+	mongoose.Promise = global.Promise;
 	// Handle the connection event
 	db = mongoose.connection;
 	db.on('error', console.error.bind(console, 'connection error:'));

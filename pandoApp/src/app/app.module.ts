@@ -14,6 +14,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { ChatComponent } from './chat/chat.component';
 import { LogoAnimadoComponent } from './logo-animado/logo-animado.component';
 import { ConversacionComponent } from './chat/conversacion/conversacion.component';
+import { ResultadosComponent } from './resultados/resultados.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ConversacionComponent } from './chat/conversacion/conversacion.componen
     InicioComponent,
     ChatComponent,
     LogoAnimadoComponent,
-    ConversacionComponent
+    ConversacionComponent,
+    ResultadosComponent
   ],
   imports: [
     BrowserModule,

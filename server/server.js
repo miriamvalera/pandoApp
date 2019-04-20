@@ -8,10 +8,13 @@ const morgan     = require('morgan');
 const cors = require('cors')
 const http = require('http');
 
-const router = require('./app/router');
+// const router = require('./app/routes');
 const db = require('./app/database');
 
-const app        = express();
+const vote = require('./app/routes/vote');
+const user = require('./app/routes/user');
+const msj = require('./app/routes/msj');
+const app = express();
 const port = process.env.PORT|| process.env.OPENSHIFT_NODEJS_PORT || 8080; // set our port
 
 const server = http.createServer(app);
@@ -32,14 +35,16 @@ app.use(allowCrossDomain);
 app.use(morgan('dev')); // log requests to the console
 
 // configure body parser
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // INIT DATABASE -------------------------------
 db.initDb(function(err){console.log('Error connecting db:',err)});
 
 // ROUTES -------------------------------
-app.use('/api', router);
+app.use('/votes', vote);
+app.use('/users', user);
+app.use('/msjs', msj);
 
 // PUBLIC DIR -------------------------------
 app.use(express.static(__dirname + "/public"));

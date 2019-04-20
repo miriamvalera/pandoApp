@@ -1,6 +1,5 @@
-const mongoose     = require('mongoose','mongoose-type-email');
-const Schema       = mongoose.Schema;
-
+const mongoose = require('mongoose','mongoose-type-email');
+const Schema = mongoose.Schema;
 
 const MensajesSchema   = new Schema({
     idMsg: String,
@@ -12,4 +11,4 @@ const MensajesSchema   = new Schema({
   
 });
 
-module.exports = mongoose.model('Msj', MensajesSchema);
+module.exports = mongoose.model('msj', MensajesSchema);

@@ -1,5 +1,5 @@
-const mongoose     = require('mongoose','mongoose-type-email');
-const Schema       = mongoose.Schema;
+const mongoose  = require('mongoose','mongoose-type-email');
+const Schema = mongoose.Schema;
 
 const UsuarioSchema   = new Schema({
     email:  {
@@ -14,4 +14,4 @@ const UsuarioSchema   = new Schema({
 
 });
 
-module.exports = mongoose.model('Usuario', UsuarioSchema);
+module.exports = mongoose.model('user', UsuarioSchema);
