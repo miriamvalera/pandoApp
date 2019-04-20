@@ -1,8 +1,7 @@
-/*
 const router = require('express').Router();
 const usuario = require('./usuario');
 const msj = require('./msj');
-const voto = require('./vote');
+const voto = require('./voto');
 
 
 // middleware to use for all requests
@@ -24,4 +23,3 @@ router.use(voto);
 // FUNCTIONS FOR TRAINEDS
 
 module.exports = router;
-*/
