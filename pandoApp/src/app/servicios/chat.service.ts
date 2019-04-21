@@ -19,7 +19,7 @@ export class ChatService {
 
   constructor(private _http:HttpClient, private socket: Socket, private _chatService: ChatService, private _route: ActivatedRoute) {
     this.socket.on('msg', (data) => {
-      // console.log('data:', data, this._mensajes);
+      console.log('data:', data, this._mensajes);
       this._mensajes.push(data);
       this.$msgsObserver.next(this._mensajes);
     });
@@ -29,27 +29,22 @@ export class ChatService {
       this._mensajes.push(msg);
       this.socket.emit('msg', msg);
     }
-    getParametroUsuario(){
-      this._route.params.subscribe(parametros => {
-          this.username = parseInt(parametros.id);
-          console.log("parametros", parametros.id);
-          //console.log("this.username", this.username);
-        });
-    }
-   
-    found(data) {      
-      if (data !== undefined && this.username !== undefined) {
-        data.find(function (element) {
-          console.log("found", element.name);
-          if (data.id === this.username) {
-            return element.name;
-          }
-        });
-      }
 
-    }
+   
+    // found(data) {      
+    //  console.log("data", data.length);
+    //  for(let i=0; i< data.length;i++){
+    //       if (data[i].id == this.username) {
+    //         console.log("found", data[i].name);
+    //         return data[i].name;
+    //       }
+    //  }     
+      
+
+    // }
     getMensajes(): Observable<any> {
       this._msgsObservable = this.$msgsObserver.asObservable();
+      console.log("this._msgsObservable", this._msgsObservable);
       return this._msgsObservable;
     }
 

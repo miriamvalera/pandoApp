@@ -44,28 +44,34 @@ $margin-top-cajatxt:15px;
                     width: 20px;
                     height: 20px;
                     display: block;
-                    background: rgba(99, 255, 187, 1);
+                    background: rgb(169, 255, 218);
                     position: absolute;
                     top: calc(50% - 10px);
                     transform: rotate(45deg);
                     left: -10px;
                     z-index: 0;
+                }                
+                .cnt-msg-usuario{
+                    background: rgb(169, 255, 218);
                 }
             }
             
             &.origen{                
-                flex-direction: row-reverse;
+                flex-direction: row-reverse;             
                 &:before{
                     content: "";
                     width: 20px;
                     height: 20px;
                     display: block;
-                    background: rgba(99, 255, 187, 1);
+                    background: rgb(99, 255, 187);
                     position: absolute;
                     top: calc(50% - 10px);
                     transform: rotate(45deg);
                     right: -10px;
                     z-index: 0;
+                }                
+                .cnt-msg-usuario{
+                    background: rgb(99, 255, 187);
                 }
             }
             
@@ -74,7 +80,6 @@ $margin-top-cajatxt:15px;
                 padding: 15px;
                 width: auto;
                 border-radius: 5px;
-                background: rgba(99, 255, 187, 1);
                 .nombreusuario{                    
                     width: 100%;
                     display: block;

@@ -10,14 +10,15 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './conversacion.component.html',
   styleUrls: ['./conversacion.component.scss']
 })
-export class ConversacionComponent implements OnInit, OnDestroy {
+export class ConversacionComponent implements OnInit {
 
   documents: Observable<string[]>;
   currentDoc: string;
   private _docSub: Subscription;
 
   msgtxt = '';
-  username = 0;
+  username = null;
+  userid = null;
   losmsgs = null;
 
   constructor(private _chatService: ChatService, private _route: ActivatedRoute) { }
@@ -25,14 +26,28 @@ export class ConversacionComponent implements OnInit, OnDestroy {
   ngOnInit() {
 
 
+    this._route.params.subscribe(parametros => {
+      this.userid = parseInt(parametros.id);
+      console.log("parametros", parametros.id);
+      return this.userid;
+      //console.log("this.username", this.username);
+    });
+
+   this._chatService.getUsuariosChatAPI().subscribe(dat => {
+     console.log("data.id ", dat);
+
+        for(let i=0; i< dat.length;i++){
+          if (dat[i].id == this.userid) {
+            this.username = dat[i].name;
+            console.log("found", dat[i].name);
+          }
+        }
+    });   
+
     this._chatService.getMensajes().subscribe(data => {
       this.losmsgs = data;
     });
 
-    this._chatService.getUsuariosChatAPI().subscribe(dat => {
-      console.log("data.id ", dat)
-      this._chatService.found(dat);
-    });
 
   }
 

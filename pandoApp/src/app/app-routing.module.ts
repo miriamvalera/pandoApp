@@ -14,12 +14,12 @@ const routes: Routes = [
   {path:'registro', component: RegistroComponent, pathMatch:'full'},
   {path:'contactos', component: ContactosComponent, pathMatch:'full'},
   {path:'votaciones', component: VotacionesComponent, pathMatch:'full'}, 
-  {path:'conversacion/:id', component: ConversacionComponent, pathMatch:'full'},
+  {path:'conversacion/:id', loadChildren:'./chat/chat.module#ChatModule' },
   { path: '', redirectTo: 'inicio', pathMatch: 'full'}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
