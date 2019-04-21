@@ -29,7 +29,6 @@ const config: SocketIoConfig = { url: 'http://localhost:3000/animales', options:
     InicioComponent,
     ChatComponent,
     LogoAnimadoComponent,
-    ConversacionComponent,
     ResultadosComponent
   ],
   imports: [
