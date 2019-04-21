@@ -15,6 +15,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { ChatComponent } from './chat/chat.component';
 import { LogoAnimadoComponent } from './logo-animado/logo-animado.component';
 import { ConversacionComponent } from './chat/conversacion/conversacion.component';
+import { ResultadosComponent } from './resultados/resultados.component';
 
 const config: SocketIoConfig = { url: 'http://localhost:3000/animales', options: {} };
 
@@ -27,7 +28,9 @@ const config: SocketIoConfig = { url: 'http://localhost:3000/animales', options:
     RegistroComponent,
     InicioComponent,
     ChatComponent,
-    LogoAnimadoComponent
+    LogoAnimadoComponent,
+    ConversacionComponent,
+    ResultadosComponent
   ],
   imports: [
     BrowserModule,
