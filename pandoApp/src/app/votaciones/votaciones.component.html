@@ -4,12 +4,12 @@
 				(ngSubmit)="submitVotingForm(votingForm)">
 
 		<div class="form-group pando-voting-formGroup">
-			<input type="text" placeholder="Voting title" required
+			<input type="text" placeholder="Título" required
 				formControlName="title">
 		</div>
 
 		<div class="form-group pando-voting-formGroup">
-			<textarea class="col-12" placeholder="Description" required
+			<textarea class="col-12" placeholder="Descripción" required
 					formControlName="description"></textarea>
 		</div>
 
@@ -18,18 +18,18 @@
 				 *ngFor="let option of votingForm.get('options').controls; let i = index;">
 			<div [formGroupName]="i">
 				<div class="input-group mb-3">
-					<input type="text" class="form-control" placeholder="Option value" required
+					<input type="text" class="form-control" placeholder="Opción" required
 						 formControlName="description">
 					<div class="input-group-append">
-						<button class="btn btn-outline-secondary" type="button" (click)="removeOption(i)">Remove</button>
+						<button class="btn btn-outline-secondary" type="button" (click)="removeOption(i)">Eliminar</button>
 					</div>
 				</div>
 			</div>
 		</div>
 
 		<div class="form-group pando-voting-btnGroup mt-4">
-				<button type="button" class="btn btn-outline-secondary" (click)="addOption()">Add new Option</button>
-				<button type="submit" class="col-12 mt-3 btn btn-outline-primary">Submit Form</button>
+				<button type="button" class="btn btn-outline-secondary" (click)="addOption()">Añadir opción</button>
+				<button type="submit" class="col-12 mt-3 btn btn-outline-primary">Enviar</button>
 		</div>
 	</form>
 </div>

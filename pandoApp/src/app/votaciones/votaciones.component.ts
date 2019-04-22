@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {VotingService} from '../servicios/Voting.service';
 import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
 	selector: 'votaciones',
@@ -12,7 +13,7 @@ export class VotacionesComponent implements OnInit {
 	votingForm: FormGroup;
 	options: FormArray;
 
-	constructor(private service: VotingService, private router: Router, private formBuilder: FormBuilder) {
+	constructor(private service: VotingService, private http:HttpClient, private router: Router, private formBuilder: FormBuilder) {
 
 	}
 
