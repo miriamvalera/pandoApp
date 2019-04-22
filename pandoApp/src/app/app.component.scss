@@ -1,12 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Cookie|Dancing+Script|Gochi+Hand|Merienda|Neucha|Rasa|Satisfy|Signika+Negative|Tajawal|Tangerine');
-$color-bg: #f4efe7;
-html{
-    background-color: #63FFBB;
+@import '__variables';
+
+html, body, .pandoApp {
+    background-color: $color-bg;
 }
-body{
-    background-color:  $color-bg;
-}
-.contenedorPrincipal{
-    background-color:  $color-bg;
-    
-}
+

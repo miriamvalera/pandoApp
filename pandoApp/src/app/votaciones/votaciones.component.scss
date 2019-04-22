@@ -1,86 +1,37 @@
-/*Declaracion variables colores repetidos o otras cosas repetidas */
-$color: #3ca97a;
-$color-hover: #63FFBB;
-$color-red: red;
-$color-white: #fff;
-$border-radius: 5px;
+@import '../_variables';
 
-/*estilos de formulario votaciones*/
+.pando-voting {
+	padding: 15px 0;
 
-.cont-form{
-    padding: 15px 0;
-    .votacion-form{
-        border: solid 1px $color;
-        border-radius: $border-radius;    
-        padding: 15px;    
-        .cnt{
-            &-titVotacion{                
-                margin-bottom: 15px;
-                &.empty{
-                    input{
-                        border: solid 1px $color-red;                        
-                    }
-                }   
-                input{                   
-                    outline: none;
-                    border: solid 1px $color;
-                }
-            }
-            &-descVotacion{       
-                margin-bottom: 15px;
-                &.empty{
-                    textarea{
-                        border: solid 1px $color-red;                        
-                    }
-                }           
-                textarea{
-                    outline: none;
-                    resize: none;
-                    border-radius: $border-radius;  
-                    border: solid 1px $color;
-                }
-            }
-            &-opcVotacion{         
-                margin-bottom: 5px 0;                  
-                &.empty{
-                    input{
-                        border: solid 1px $color-red;                        
-                    }
-                }   
-                input{                         
-                    outline: none;
-                    margin-bottom: 15px;
-                    border-radius: $border-radius;  
-                    border: solid 1px $color;
-                }              
-            }
-            &-btnOpcion{         
-                padding: 0 15px;
-                .enviar{
-                    margin-top: 15px;                       
-                }
-                .add, .remove, .enviar{
-                    border: solid 1px $color;
-                    background: none;
-                    border-radius: 5px;
-                    color: $color;
-                    outline: none;
-                    transition:all 0.5s;
-                }
-                .remove:hover{                    
-                    border: solid 1px $color-red;
-                    color: $color-white;
-                    background: $color-red;
-                    transition:all 0.5s;
-                }
-                .add:hover, .enviar:hover{                    
-                    border: solid 1px $color-hover;
-                    color: $color-white;
-                    background: $color-hover;
-                    transition:all 0.5s;
-                }
-            }
-        }
-        
-    }
+	&-form {
+		margin: 0 auto;
+		border: solid 1px $main-color;
+		padding: 15px;
+	}
+
+	&-formGroup {
+		margin-top: 15px;
+		&.empty {
+			input, textarea {
+				border: solid 1px $accent-color;
+			}
+		}
+
+		input, textarea {
+			padding: 5px 10px;
+			outline: none;
+			resize: none;
+			border: solid 1px $main-color;
+			border-radius: 3px;
+		}
+	}
+	&-btnGroup {
+		text-align: right;
+
+		.btn-outline-primary {
+			background-color: $accent-color;
+			border-color: $accent-color;
+			color: $white;
+		}
+	}
 }

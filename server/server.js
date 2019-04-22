@@ -18,12 +18,12 @@ const server = http.createServer(app);
 
 //CORS middleware
 const allowCrossDomain = function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-Width, Content-Type, Accept, Access-Control-Allow-Method');
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
+	res.header('Access-Control-Allow-Origin', '*');
+	res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-Width, Content-Type, Accept, Access-Control-Allow-Method');
+	res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+	res.header('Access-Control-Allow-Headers', 'Content-Type');
 
-    next();
+	next();
 };
 app.use(cors());
 app.use(allowCrossDomain);
@@ -47,4 +47,4 @@ app.use(express.static(__dirname + "/public"));
 // START THE SERVER
 // =============================================================================
 server.listen(port);
-console.log('Wellcome to the server on port ' + port);
+console.log('Welcome to the server on port ' + port);

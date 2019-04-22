@@ -1,28 +1,35 @@
-<div class="row cont-form">
-  <div class="col-lg-3 col-md-2 col-sm-1 col-xs-0"></div>
-  <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12 votacion-form">
-    <form class="" [formGroup]="votacionForm" (ngSubmit)="generaVotacion()">
-      <div class="cnt-titVotacion">
-        <input type="text" name="tVotacion" placeholder="Titulo de la votación" class="form-control col-12"
-          formControlName="titVotacion" required>
-      </div>
-      <div  class="cnt-descVotacion">
-        <textarea class="col-12" name="descVot" placeholder="Describe tu proposicion" formControlName="descVotacion" required>
-        </textarea>
-      </div>
-      <div class="cnt-opcVotacion row">
-        <div class="col-md-4 col-sm-12" formArrayName="opciones" *ngFor="let aO of votacionForm.get('opciones').controls; let i = index;">
-          <input class="col-12" type="text" [formControlName]="i" placeholder="Escribe una Opción" required>
-        </div>
-      </div>
+<div class="row cont-form pando-voting">
+	<form class="col-lg-6 col-md-8 col-sm-10 col-xs-12 pando-voting-form"
+				[formGroup]="votingForm"
+				(ngSubmit)="submitVotingForm(votingForm)">
 
-      <div class="cnt-btnOpcion row">
-          <button class="col-5 add" (click)="addOpcion()">Añadir Opción</button>
-          <div class="col-2"></div>
-          <button class="col-5 remove" (click)="removeOpcion()">Quitar Opción</button>
-          <button type="submit" class="col-12 enviar">Enviar</button>
-      </div>
-    </form>
-  </div>  
-  <div class="col-lg-3 col-md-2 col-sm-1 col-xs-0"></div>
+		<div class="form-group pando-voting-formGroup">
+			<input type="text" placeholder="Voting title" required
+				formControlName="title">
+		</div>
+
+		<div class="form-group pando-voting-formGroup">
+			<textarea class="col-12" placeholder="Description" required
+					formControlName="description"></textarea>
+		</div>
+
+		<div class="form-group pando-voting-formGroup mt-1"
+				 formArrayName="options"
+				 *ngFor="let option of votingForm.get('options').controls; let i = index;">
+			<div [formGroupName]="i">
+				<div class="input-group mb-3">
+					<input type="text" class="form-control" placeholder="Option value" required
+						 formControlName="description">
+					<div class="input-group-append">
+						<button class="btn btn-outline-secondary" type="button" (click)="removeOption(i)">Remove</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group pando-voting-btnGroup mt-4">
+				<button type="button" class="btn btn-outline-secondary" (click)="addOption()">Add new Option</button>
+				<button type="submit" class="col-12 mt-3 btn btn-outline-primary">Submit Form</button>
+		</div>
+	</form>
 </div>

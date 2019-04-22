@@ -1,13 +1,18 @@
-.navbar-brand{
-    display: flex;
-    img{
-        height: 50px;
-    }
-    .titApp{
-        padding-left:1rem;
-    }
+@import '../__variables';
+
+.cabecera .nav {
+	background-color: $main-color;
 }
-.bg-light{
-    background-color: #63FFBB !important;
+
+.navbar-brand {
+	display: flex;
+
+	img {
+		height: 50px;
+	}
+
+	.titApp {
+		padding-left: 1rem;
+	}
 }
 
