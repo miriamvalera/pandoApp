@@ -24,9 +24,6 @@ router.route('/mensajes')
 
     });
 
-
-
-
 router.route('/mensajes/:user_orig')
     .get(function (req, res) {
         //res.json({data: 'hola:'+req.params.pid});

@@ -38,6 +38,16 @@ router.route('/votaciones')
 
     });
 
+    router.route('/resultados/:_id')
+    .get(function(req, res){
+        //res.json({data: 'hola:'+req.params.pid});
+        Vote.findById(req.params._id).then(aVotes=>{
+            res.json(aVotes);
+        }).catch(err => {
+            console.log('Error getting vote:', err);
+            res.status(500).send({ message: 'Server error' });
+        });
+    });
 
 module.exports = router;
 
