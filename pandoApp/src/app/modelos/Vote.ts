@@ -1,9 +1,9 @@
 export class Vote {
 	constructor(
-		idF: number,
-		tVotacion: string,
-		opcionVot: string[],
-		descVot: string
+		public _id: number,
+		public tVotacion: string,
+		public opcionVot: string[],
+		public descVot: string
 	) {
 	}
 }
