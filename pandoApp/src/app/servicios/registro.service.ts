@@ -24,6 +24,6 @@ export class RegistroService {
   }
 
   addUsuarioToApi(nuevoUsuario: Usuario): Observable<Usuario> {
-    return this._http.post<Usuario>('http://172.27.96.127:8080/api/usuario', nuevoUsuario);
-  }
+    return this._http.post<Usuario>('http://172.27.96.127:8080/api/usuarios', nuevoUsuario);
+   };
 }
