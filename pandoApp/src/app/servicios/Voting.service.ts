@@ -16,5 +16,10 @@ export class VotingService {
 
 	get(nuevoVoto) {
 		return this.httpClient.get(`${environment.API_URL}/votaciones`);
+	} 
+
+	getById(id){
+		return this.httpClient.get(`${environment.API_URL}/votaciones/${id}`);
+
 	}
 }

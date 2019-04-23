@@ -55,6 +55,7 @@ export class VotacionesComponent implements OnInit {
 			console.log('votoNuevo:', votoNuevo);
 			this.service.send(votoNuevo).subscribe(votacionreg=>{
 				console.log('votacionreg:',votacionreg);
+				this.router.navigate(['/votaciones',votacionreg._id]);
 			});
 		} else {
 			console.error('Error');
