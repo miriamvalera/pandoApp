@@ -1,6 +1,7 @@
 // DATABASE SETUP
-let mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL || 'mongodb://localhost:27017/ddbb'; // set mongo url
+let mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL || 'mongodb://172.27.96.127:27017/pando'; // set mongo url
 let  mongoURLLabel = "";
+
 
 if (mongoURL == null && process.env.DATABASE_SERVICE_NAME) {
 	let mongoServiceName = process.env.DATABASE_SERVICE_NAME.toUpperCase(),
@@ -32,6 +33,7 @@ let initDb = function(callback) {
 
 	const options = {useMongoClient: true};
 
+	
 	mongoose.connect(mongoURL,options); // connect to our database
 	// Handle the connection event
 	db = mongoose.connection;

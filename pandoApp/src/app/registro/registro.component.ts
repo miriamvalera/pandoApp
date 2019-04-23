@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../modelos/usuario';
 import { RegistroService } from '../servicios/registro.service';
 import { Router } from '@angular/router';
-import { Registro } from '../modelos/registro';
 
 @Component({
   selector: 'app-registro',
@@ -11,7 +10,7 @@ import { Registro } from '../modelos/registro';
 })
 export class RegistroComponent implements OnInit {
 
-  regUser = new Registro (null, null, null, null, null);
+  regUser = new Usuario (null, null, null, null, null);
   constructor() { }
 
   ngOnInit() {
