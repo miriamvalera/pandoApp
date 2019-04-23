@@ -21,17 +21,15 @@ export class ConversacionComponent implements OnInit {
   userid = null;
   losmsgs = null;
 
-  idMsg = ;
-  idOrig = ;
-  idDest = ;
-  texto = ;
-  msgHora = ;
-
+  idMsg = null;
+  idOrig = null;
+  idDest = null;
+  texto = '';
+  msgHora = null;   
 
   constructor(private _chatService: ChatService, private _route: ActivatedRoute) { }
 
   ngOnInit() {
-
 
     this._route.params.subscribe(parametros => {
       this.userid = parseInt(parametros.id);
@@ -54,8 +52,6 @@ export class ConversacionComponent implements OnInit {
     this._chatService.getMensajes().subscribe(data => {
       this.losmsgs = data;
     });
-
-
   }
 
   ngOnDestroy() {

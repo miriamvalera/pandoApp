@@ -18,7 +18,7 @@ router.get('/', function(req, res) {
 
 router.use(usuario);
 router.use(msj);
-router.use('/voting', voting);
+router.use(voting);
 
 // FUNCTIONS FOR TRAINEDS
 

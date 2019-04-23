@@ -21,6 +21,8 @@ router.route('/usuarios')
         usuario.lastaname = req.body.lastaname;
         usuario.imgPerfil = req.body.imgPerfil;
 
+        console.log('usuario:',usuario);
+
         Usuario.findOne({ email: usuario.email }).then(aUsuario => {
             if (aUsuario) {
                 res.status(409).send({ message: 'This email already exists' });
