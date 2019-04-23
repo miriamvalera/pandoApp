@@ -29,7 +29,7 @@
 
 		<div class="form-group pando-voting-btnGroup mt-4">
 				<button type="button" class="btn btn-outline-secondary" (click)="addOption()">Añadir opción</button>
-				<button type="submit" class="col-12 mt-3 btn btn-outline-primary">Enviar</button>
+				<button type="submit" class="col-12 mt-3 btn btn-outline-primary" [routerLink]="['/vote', business._id]">Enviar</button>
 		</div>
 	</form>
 </div>
