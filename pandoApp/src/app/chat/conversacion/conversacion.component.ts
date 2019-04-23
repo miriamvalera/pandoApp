@@ -21,10 +21,15 @@ export class ConversacionComponent implements OnInit {
   userid = null;
   losmsgs = null;
 
+  idMsg = null;
+  idOrig = null;
+  idDest = null;
+  texto = '';
+  msgHora = null;   
+
   constructor(private _chatService: ChatService, private _route: ActivatedRoute) { }
 
   ngOnInit() {
-
 
     this._route.params.subscribe(parametros => {
       this.userid = parseInt(parametros.id);
@@ -33,22 +38,20 @@ export class ConversacionComponent implements OnInit {
       //console.log("this.username", this.username);
     });
 
-   this._chatService.getUsuariosChatAPI().subscribe(dat => {
-     console.log("data.id ", dat);
+    this._chatService.getUsuariosChatAPI().subscribe(dat => {
+      console.log("data.id ", dat);
 
-        for(let i=0; i< dat.length;i++){
-          if (dat[i].id == this.userid) {
-            this.username = dat[i].name;
-            console.log("found", dat[i].name);
-          }
+      for (let i = 0; i < dat.length; i++) {
+        if (dat[i].id == this.userid) {
+          this.username = dat[i].name;
+          console.log("found", dat[i].name);
         }
-    });   
+      }
+    });
 
     this._chatService.getMensajes().subscribe(data => {
       this.losmsgs = data;
     });
-
-
   }
 
   ngOnDestroy() {
