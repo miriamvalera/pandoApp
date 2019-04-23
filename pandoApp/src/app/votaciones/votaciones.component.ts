@@ -48,7 +48,10 @@ export class VotacionesComponent implements OnInit {
 		if (votingForm.valid) {
 			const formControls = votingForm.controls;
 			console.log('formControls:', formControls);
-			const votoNuevo = new Vote(0, formControls.title.value, formControls.options.value, formControls.description.value)
+			const opciones= formControls.options.value.map(function(aV){
+				return aV.description
+			});
+			const votoNuevo = new Vote(0, formControls.title.value, formControls.description.value,opciones);
 			console.log('votoNuevo:', votoNuevo);
 			this.service.send(votoNuevo).subscribe(votacionreg=>{
 				console.log('votacionreg:',votacionreg);

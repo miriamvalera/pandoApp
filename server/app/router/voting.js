@@ -23,13 +23,9 @@ router.route('/votaciones')
         vote.description = req.body.description;
         vote.options = req.body.options;
 
-        console.log('votaciones: ',vote);
+        console.log('votaciones: ', vote);
 
-        Vote.then(aVote => {
-        if (aVote)aVote.save();
-
-            return aVote;
-        }).then(savedVote => {
+        vote.save().then(savedVote => {
             console.log('savedVote:', savedVote);
 
             if (savedVote) {
@@ -37,7 +33,7 @@ router.route('/votaciones')
             }
         }).catch(err => {
             console.log('Error saving new vote:', err);
-            res.status(500).send({ message: 'Server error'});
+            res.status(500).send({ message: 'Server error' });
         })
 
     });
