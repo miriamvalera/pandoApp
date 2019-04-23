@@ -17,7 +17,7 @@ import { LogoAnimadoComponent } from './logo-animado/logo-animado.component';
 import { ConversacionComponent } from './chat/conversacion/conversacion.component';
 import { ResultadosComponent } from './resultados/resultados.component';
 
-const config: SocketIoConfig = { url: 'http://localhost:3000/animales', options: {} };
+const config: SocketIoConfig = { url: 'http://172.27.96.127:8080/pando', options: {} };
 
 @NgModule({
   declarations: [

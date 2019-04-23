@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../modelos/usuario';
 import { RegistroService } from '../servicios/registro.service';
 import { Router } from '@angular/router';
-import { Registro } from '../modelos/registro';
 
 @Component({
   selector: 'app-registro',
@@ -11,14 +10,26 @@ import { Registro } from '../modelos/registro';
 })
 export class RegistroComponent implements OnInit {
 
-  regUser = new Registro (null, null, null, null, null);
-  constructor() { }
+  regUser = new Usuario(null, null, null, null, null);
+  psswrep = null;
+
+  constructor(private _regServ:RegistroService, private _router:Router) { }
 
   ngOnInit() {
   }
 
-  generaUsuario(){
-      console.log('respuesta post:',this.regUser);
-    };
+  comparaPass() {
+    return (this.regUser.pssw === this.psswrep);
   }
+
+  generaUsuario() {
+    console.log('respuesta post:', this.regUser);
+    this._regServ.addUsuarioToApi(this.regUser).subscribe(unUsuario=>{
+      console.log('respuesta post:', unUsuario);
+      this._router.navigate(['/usuario']);
+    });
+
+  }
+
+}
 
