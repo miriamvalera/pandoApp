@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
-import {VotingService} from '../servicios/Voting.service';
-import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { VotingService } from '../servicios/Voting.service';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Vote } from 'src/app/modelos/Vote';
 
 @Component({
 	selector: 'votaciones',
@@ -13,7 +14,7 @@ export class VotacionesComponent implements OnInit {
 	votingForm: FormGroup;
 	options: FormArray;
 
-	constructor(private service: VotingService, private http:HttpClient, private router: Router, private formBuilder: FormBuilder) {
+	constructor(private service: VotingService, private http: HttpClient, private router: Router, private formBuilder: FormBuilder) {
 
 	}
 
@@ -45,9 +46,13 @@ export class VotacionesComponent implements OnInit {
 
 	submitVotingForm(votingForm) {
 		if (votingForm.valid) {
-			this.service.send(votingForm.value);
+			const formControls = votingForm.controls;
+			console.log('formControls:', formControls);
+			const votoNuevo = new Vote(0, formControls.title.value, formControls.options.value, formControls.description.value)
+			console.log('votoNuevo:', votoNuevo);
+			//this.service.send(votoNuevo);
 		} else {
-			console.error('Invalid form');
+			console.error('Error');
 		}
 	}
 
