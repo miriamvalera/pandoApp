@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {environment} from '../../environments/environment';
 
-const URL = '';
 
 @Injectable({
 	providedIn: 'root'
@@ -10,11 +10,11 @@ export class VotingService {
 	constructor(private httpClient: HttpClient) {
 	}
 
-	send(model) {
-		return this.httpClient.post(URL, model);
+	send(votacion) {
+		return this.httpClient.post(`${environment.API_URL}/votaciones`, votacion);
 	}
 
-	get() {
-		return this.httpClient.get(URL);
+	get(nuevoVoto) {
+		return this.httpClient.get(`${environment.API_URL}/votaciones`);
 	}
 }

@@ -50,11 +50,12 @@ export class VotacionesComponent implements OnInit {
 			console.log('formControls:', formControls);
 			const votoNuevo = new Vote(0, formControls.title.value, formControls.options.value, formControls.description.value)
 			console.log('votoNuevo:', votoNuevo);
-			//this.service.send(votoNuevo);
+			this.service.send(votoNuevo).subscribe(votacionreg=>{
+				console.log('votacionreg:',votacionreg);
+			});
 		} else {
 			console.error('Error');
 		}
 	}
-
 
 }
