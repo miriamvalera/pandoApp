@@ -1,15 +1,12 @@
 export class Vote {
 	constructor(
-		public   title: String,
-		public  description: String,
-		public options: [{
-			description: String
-		}],
-	
-    ){        
-    }
+		public _id: number,
+		public title: String,
+		public description: String,
+		public options: [Object],
+	) {
+	}
 }
 
-
-
-
+    
+    
