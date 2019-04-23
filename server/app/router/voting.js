@@ -3,7 +3,7 @@ const router = require('express').Router();
 const Vote= require('../models/vote');
 // router.post('/add', VotingController.addVote);
 
-module.exports = router;
+// module.exports = router;
 
 router.route('/votaciones')
     .get(function (req, res) {

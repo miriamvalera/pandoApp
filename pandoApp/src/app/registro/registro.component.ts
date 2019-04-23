@@ -23,7 +23,7 @@ export class RegistroComponent implements OnInit {
   }
 
   generaUsuario() {
-    console.log('respuesta post:', this.regUser);
+    console.log('regUser:', this.regUser);
     this._regServ.addUsuarioToApi(this.regUser).subscribe(unUsuario=>{
       console.log('respuesta post:', unUsuario);
       this._router.navigate(['/usuarios']);
