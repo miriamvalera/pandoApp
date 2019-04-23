@@ -1,6 +1,6 @@
 const router = require('express').Router();
 // const VotingController = require('../controllers/VotingController');
-const Vote= require('../models/vote');
+const Vote = require('../models/vote');
 // router.post('/add', VotingController.addVote);
 
 module.exports = router;
@@ -18,11 +18,30 @@ router.route('/votaciones')
     })
     .post(function (req, res) {
         const vote = new Vote();
-           vote.title = req.body.title,
-           vote.description = req.body.description,
-           vote.options = req.body.options
+
+        vote.title = req.body.title;
+        vote.description = req.body.description;
+        vote.options = req.body.options;
+
+        console.log('votaciones: ',vote);
+
+        Vote.then(aVote => {
+        if (aVote)aVote.save();
+
+            return aVote;
+        }).then(savedVote => {
+            console.log('savedVote:', savedVote);
+
+            if (savedVote) {
+                res.json(savedVote);
+            }
+        }).catch(err => {
+            console.log('Error saving new vote:', err);
+            res.status(500).send({ message: 'Server error'});
+        })
+
     });
-        console.log('votaciones: ',vote)
-        
-    module.exports = router;
+
+
+module.exports = router;
 
