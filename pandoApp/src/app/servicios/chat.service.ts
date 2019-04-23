@@ -49,7 +49,7 @@ export class ChatService {
     }
 
   getUsuariosChatAPI():Observable<Chat[]>{
-    return this._http.get<Chat[]>('http://www.mocky.io/v2/5cb6df55320000e110cd4673');
+    return this._http.get<Chat[]>('http://172.27.96.127:8080/api/mensajes');
   }
 
 }
