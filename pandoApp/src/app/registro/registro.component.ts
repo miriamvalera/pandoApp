@@ -10,18 +10,26 @@ import { Router } from '@angular/router';
 })
 export class RegistroComponent implements OnInit {
 
-  nuevoUsuario= new Usuario(1,'correo','contraseña','nombre','imagen de perfil');
+  regUser = new Usuario(null, null, null, null, null);
+  psswrep = null;
 
-  constructor(private _usuServ:RegistroService, private _router:Router) { }
+  constructor(private _regServ:RegistroService, private _router:Router) { }
 
   ngOnInit() {
   }
 
-  generaUsuario(elForm){
-    this._usuServ.addUsuarioToApi(this.nuevoUsuario).subscribe(unUsuario =>{
-      console.log('respuesta post:',unUsuario);
-      this._router.navigate(['/registro']);
+  comparaPass() {
+    return (this.regUser.pssw === this.psswrep);
+  }
+
+  generaUsuario() {
+    console.log('regUser:', this.regUser);
+    this._regServ.addUsuarioToApi(this.regUser).subscribe(unUsuario=>{
+      console.log('respuesta post:', unUsuario);
+      this._router.navigate(['/usuarios']);
     });
+
   }
 
 }
+

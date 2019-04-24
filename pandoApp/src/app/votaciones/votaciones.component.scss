@@ -1,0 +1,37 @@
+@import '../_variables';
+
+.pando-voting {
+	padding: 15px 0;
+
+	&-form {
+		margin: 0 auto;
+		border: solid 1px $main-color;
+		padding: 15px;
+	}
+
+	&-formGroup {
+		margin-top: 15px;
+		&.empty {
+			input, textarea {
+				border: solid 1px $accent-color;
+			}
+		}
+
+		input, textarea {
+			padding: 5px 10px;
+			outline: none;
+			resize: none;
+			border: solid 1px $main-color;
+			border-radius: 3px;
+		}
+	}
+	&-btnGroup {
+		text-align: right;
+
+		.btn-outline-primary {
+			background-color: $accent-color;
+			border-color: $accent-color;
+			color: $white;
+		}
+	}
+}

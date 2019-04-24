@@ -1,9 +1,29 @@
-<h2>Registrate</h2>
-<form #registroForm="ngForm" (ngSubmit)="generaUsuario(registroForm)">
-    <div><input type="text" [(ngModel)]="nuevoUsuario.name" name="name" placeholder="Nombre de la votación"></div>
-    <div><input [(ngModel)]="nuevoUsuario.email" name="email" placeholder="Describe tu proposicion"></div>
-    <div><input type="text" [(ngModel)]="nuevoUsuario.pssw" name="pssw" placeholder="Contraseña"></div>
-    <div><input type="text" [(ngModel)]="nuevoUsuario.pssw" name="pssw2" placeholder="Repite la Contraseña"></div>
-    <div><input type="file" name="imgPerfil" accept="img/*"></div>
-    <div><button [disabled]="!registroForm.valid">Enviar</button></div>
-  </form>
+<div class="row cont-form">
+  <div class="col-lg-3 col-md-2 col-sm-1 col-xs-0"></div>
+  <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12 registro-form">
+    <form #registroForm="ngForm" (ngSubmit)="generaUsuario()">
+      <span class="nombre-reg">
+        <input class="col-6" type="text" [(ngModel)]="regUser.name" name="name" placeholder="Nombre">
+      </span>
+      <span class="nombre-reg">
+        <input class="col-6" type="text" [(ngModel)]="regUser.lastname" name="lastname" placeholder="Apellidos">
+      </span>
+      <div class="email-reg">
+        <input class="col-12" type="email" [(ngModel)]="regUser.email" name="email" placeholder="email">
+      </div>
+      <span  class="pssw-reg">
+        <input class="col-6" type="password" [(ngModel)]="regUser.pssw" name="pssw" placeholder="Contraseña">
+      </span>
+
+      <span  class="pssw-reg">
+        <input class="col-6" type="password" [(ngModel)]="psswrep" name="pssw2" placeholder="Repite la contraseña">
+      </span>
+      <div class="col-4 buttonImg">
+        <label class="imgPerfil">Foto de perfil<input type="file" name="imgPerfil" accept="img/*"></label>
+      </div>
+      <div class="buttonReg row">
+        <button class="col-12 enviar" [disabled]="!registroForm.valid || !comparaPass()">Enviar</button>
+      </div>
+    </form>
+  </div>
+</div>
