@@ -16,9 +16,12 @@ const port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080; // s
 
 const server = http.createServer(app);
 
+
 io = require("socket.io")(server);//conectamos (canal de entrada sea el mismo). Carga el websoket io y conecta con el servidor
 
 io.of('/mensajes').on("connection", processMessages);//creando dos canales -- función de callback
+
+
 
 function processMessages (socket) {//en cada uno de los canales modo broadcast
 	socket.on('msj', function(data) {

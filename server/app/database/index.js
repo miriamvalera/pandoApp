@@ -1,5 +1,5 @@
 // DATABASE SETUP
-let mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL || 'mongodb://172.27.96.127:27017/pando'; // set mongo url
+let mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL || 'mongodb://localhost:27017/pando'; // set mongo url
 let  mongoURLLabel = "";
 
 
