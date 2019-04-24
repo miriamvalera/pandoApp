@@ -49,7 +49,7 @@ export class ChatService {
     }
 
   getUsuariosChatAPI():Observable<Chat[]>{
-    return this._http.get<Chat[]>('http://172.27.96.127:8080/api/mensajes');
+    return this._http.get<Chat[]>('http://172.27.96.127:8080/api/usuarios');
   }
 
 }

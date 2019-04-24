@@ -17,7 +17,7 @@ import { LogoAnimadoComponent } from './logo-animado/logo-animado.component';
 import { ConversacionComponent } from './chat/conversacion/conversacion.component';
 import { ResultadosComponent } from './resultados/resultados.component';
 
-const config: SocketIoConfig = { url: 'http://172.27.96.127:8080/pando', options: {} };
+// const config: SocketIoConfig = { url: 'http://172.27.96.127:8080/mensajes', options: {} };
 
 @NgModule({
   declarations: [
@@ -37,7 +37,7 @@ const config: SocketIoConfig = { url: 'http://172.27.96.127:8080/pando', options
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    SocketIoModule.forRoot(config)
+    // SocketIoModule.forRoot(config)
   ],
   providers: [],
   bootstrap: [AppComponent]

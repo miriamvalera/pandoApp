@@ -1,10 +1,17 @@
-<div class="card border-primary mb-3" style="max-width: 18rem;">
-  <div class="card-header"> {{resultado?.title}}</div>
-  <div class="card-body text-primary">
-    <h5 class="card-title">{{resultado?.description}}</h5>
-    <div *ngFor="let resultado of resultado?.options; let i = index;">   
-      <input [id]="i" type="radio" name="opcion"><label [for]="i">{{resultado}}</label>
+<div class="row cont-form pando-resultado">
+  <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12 pando-resultado-form">
+    <h5 class="pando-resultado-names"> {{resultado?.title}}</h5>
+    <div class="pando-resultado-names">
+      <div class="card-title">{{resultado?.description}}</div>
+      <div *ngFor="let unaOpcion of resultado?.options; let i = index;">
+        <input [id]="i" type="radio" name="opcion" [(ngModel)]="opcion_escogida" [value]="unaOpcion">
+        <label [for]="i">{{unaOpcion}}</label>
+      </div>
+    </div>
+    <div class="form-group btnGroup mt-4">
+      <button type="submit" class="col-12 mt-3 btn btn-outline-primary">Enviar</button>
     </div>
   </div>
-  <button type="submit" class="col-12 mt-3 btn btn-outline-primary">Enviar</button>
 </div>
+
+<pre>{{opcion_escogida}}</pre>
