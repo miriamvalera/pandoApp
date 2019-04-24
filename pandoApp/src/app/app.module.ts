@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -18,7 +17,7 @@ import { LogoAnimadoComponent } from './logo-animado/logo-animado.component';
 import { ConversacionComponent } from './chat/conversacion/conversacion.component';
 import { ResultadosComponent } from './resultados/resultados.component';
 
-const config: SocketIoConfig = { url: 'http://172.27.96.127:8080/pando', options: {} };
+const config: SocketIoConfig = { url: 'http://172.27.96.127:8080/mensajes', options: {} };
 
 @NgModule({
   declarations: [

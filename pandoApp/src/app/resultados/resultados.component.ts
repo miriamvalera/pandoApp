@@ -22,17 +22,17 @@ export class ResultadosComponent implements OnInit {
       return this._id;
       //console.log("this.username", this.username);
     });
-    this._votingService.getById(ResultadosComponent._id).subscribe(dato => {
-      console.log('dato.id', dato);
+    // this._votingService.getById(ResultadosComponent._id).subscribe(dato => {
+    //   console.log('dato.id', dato);
 
-      for (let i = 0; i < dato.length; i++) {
-        if (dato[i].id == this._id) {
-          this.title = dato[i].name;
-          console.log("found", dato[i].name);
-        }
-      }
+    //   for (let i = 0; i < dato.length; i++) {
+    //     if (dato[i].id == this._id) {
+    //       this.title = dato[i].name;
+    //       console.log("found", dato[i].name);
+    //     }
+    //   }
       
-    });
+    // });
   }
 
 }

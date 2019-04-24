@@ -27,7 +27,7 @@ export class ContactosService {
   getUsuariosAPI():Observable<Usuario[]>{
     // console.log('Usuarios:', this._usuarios)
     // return this._usuarios;
-    return this._http.get<Usuario[]>('http://www.mocky.io/v2/5cb1b29c33000079205720b1');
+    return this._http.get<Usuario[]>('http://172.27.96.127:8080/api/usuarios');
   }
 
 }
