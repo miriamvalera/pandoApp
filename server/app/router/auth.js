@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const Usuario = require('../models/usuario');
-const jwt = require('../services/jwt');
+const jwt = require('../servicios/jwt');
 // const nodemailer = require ('nodemailer');
 
 router.route('/auth')
