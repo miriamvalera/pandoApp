@@ -1,3 +1,10 @@
-<p>
-  resultados works!
-</p>
+<div class="card border-primary mb-3" style="max-width: 18rem;">
+  <div class="card-header"> {{resultado?.title}}</div>
+  <div class="card-body text-primary">
+    <h5 class="card-title">{{resultado?.description}}</h5>
+    <div *ngFor="let resultado of resultado?.options; let i = index;">   
+      <input [id]="i" type="radio" name="opcion"><label [for]="i">{{resultado}}</label>
+    </div>
+  </div>
+  <button type="submit" class="col-12 mt-3 btn btn-outline-primary">Enviar</button>
+</div>
