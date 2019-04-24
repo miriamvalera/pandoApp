@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Usuario } from '../modelos/usuario';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,8 @@ export class RegistroService {
 
   addUsuarioToApi(nuevoUsuario: Usuario): Observable<Usuario> {
     console.log('nuevoUsuario:',nuevoUsuario);
-    return this._http.post<Usuario>('http://172.27.96.127:8080/api/usuarios', nuevoUsuario);
+    return this._http.post<Usuario>(`${environment.API_URL}/usuarios`, nuevoUsuario);
   }
   
 }
+

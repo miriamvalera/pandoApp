@@ -13,7 +13,7 @@ export class ResultadosComponent implements OnInit {
   _id = null;
   title = null;
 
-  constructor(private _votingService:VotingService, private _route:ActivatedRoute) { }
+  constructor(private _votingService: VotingService, private _route: ActivatedRoute) { }
 
   ngOnInit() {
     this._route.params.subscribe(parametros => {
@@ -22,7 +22,7 @@ export class ResultadosComponent implements OnInit {
       return this._id;
       //console.log("this.username", this.username);
     });
-    this._votingService.getById(ResultadosComponent._id).subscribe(dato => {
+    this._votingService.getById(this._id).subscribe(dato => {
       console.log('dato.id', dato);
 
       for (let i = 0; i < dato.length; i++) {
@@ -31,7 +31,7 @@ export class ResultadosComponent implements OnInit {
           console.log("found", dato[i].name);
         }
       }
-      
+
     });
   }
 
