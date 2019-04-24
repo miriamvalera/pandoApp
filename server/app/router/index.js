@@ -2,6 +2,7 @@ const router = require('express').Router();
 const usuario = require('./usuario');
 const msj = require('./msj');
 const voting = require('./voting');
+const auth = require('./auth');
 
 
 // middleware to use for all requests
@@ -19,7 +20,7 @@ router.get('/', function(req, res) {
 router.use(usuario);
 router.use(msj);
 router.use(voting);
-// router.use('/voting', voting);
+router.use(auth);
 
 // FUNCTIONS FOR TRAINEDS
 

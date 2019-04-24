@@ -3,11 +3,10 @@ const Schema       = mongoose.Schema;
 
 
 const MensajesSchema   = new Schema({
-    idMsg: String,
     idOrig: String,
     idDest: String,
     texto: String,
-    msgHora: Number
+    msgHora: String
     
   
 });

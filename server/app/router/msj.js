@@ -15,12 +15,23 @@ router.route('/mensajes')
     })
     .post(function (req, res) {
         let mensaje = new Msj();
-
-        mensaje.idMsg = req.body.idMsg;
         mensaje.idOrig = req.body.idOrig;
         mensaje.idDest = req.body.idDest;
         mensaje.texto = req.body.texto;
         mensaje.msgHora = req.body.msgHora;
+
+        console.log('mensaje:', mensaje);
+
+        mensaje.save().then(savedMsj => {
+            console.log('savedVote:', savedMsj);
+
+            if (savedMsj) {
+                res.json(savedMsj);
+            }
+        }).catch(err => {
+            console.log('Error saving new Msj:', err);
+            res.status(500).send({ message: 'Server error' });
+        })
 
     });
 
