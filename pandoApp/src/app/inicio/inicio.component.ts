@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Login } from '../modelos/login';
+import { InicioService } from '../servicios/inicio.service';
 
 @Component({
   selector: 'inicio',
@@ -9,7 +10,7 @@ import { Login } from '../modelos/login';
 export class InicioComponent implements OnInit {
 
   nuevoUsuario = new Login(null,null);
-  constructor() { }
+  constructor(private _logServ:InicioService) { }
 
   ngOnInit() {
   }
@@ -17,6 +18,13 @@ export class InicioComponent implements OnInit {
 
   guardarUsuario(){
     console.log('Nuevo:', this.nuevoUsuario);
+  }
+
+  formularioLogin(){
+    console.log('Nombre usuarix: ', this.nuevoUsuario);
+    this._logServ.addUsuarioAPI(this.nuevoUsuario).subscribe(login=>{
+      console.log('Contraseña: ',login);
+    });
   }
  
 }

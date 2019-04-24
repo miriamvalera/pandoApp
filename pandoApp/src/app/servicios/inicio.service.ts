@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Login } from '../modelos/login';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,8 @@ export class InicioService {
   }
 
   addUsuarioAPI(datosLogin: Login):Observable<Login>{
-    return this._http.post<Login>(' http://www.mocky.io/v2/5cb05ad43100005500e13395',datosLogin);
+    return this._http.post<Login>(`${environment.API_URL}/auth`,datosLogin);
+
   }
 
 }
