@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
+import { Observable } from 'rxjs';
+import { Vote } from '../modelos/Vote';
 
 
 @Injectable({
@@ -10,16 +12,16 @@ export class VotingService {
 	constructor(private httpClient: HttpClient) {
 	}
 
-	send(votacion) {
-		return this.httpClient.post(`${environment.API_URL}/votaciones`, votacion);
+	send(votacion):Observable<Vote> {
+		return this.httpClient.post<Vote>(`${environment.API_URL}/votaciones`, votacion);
 	}
 
-	get(nuevoVoto) {
-		return this.httpClient.get(`${environment.API_URL}/votaciones`);
+	get():Observable<Vote[]> {
+		return this.httpClient.get<Vote[]>(`${environment.API_URL}/votaciones`);
 	} 
 
-	getById(id){
-		return this.httpClient.get(`${environment.API_URL}/votaciones/${id}`);
+	getById(id):Observable<Vote>{
+		return this.httpClient.get<Vote>(`${environment.API_URL}/resultados/${id}`);
 
 	}
 }

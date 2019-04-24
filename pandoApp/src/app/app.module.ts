@@ -37,7 +37,7 @@ const config: SocketIoConfig = { url: 'http://172.27.96.127:8080/mensajes', opti
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    SocketIoModule.forRoot(config)
+    // SocketIoModule.forRoot(config)
   ],
   providers: [],
   bootstrap: [AppComponent]

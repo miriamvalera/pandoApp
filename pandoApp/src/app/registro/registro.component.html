@@ -19,7 +19,7 @@
         <input class="col-6" type="password" [(ngModel)]="psswrep" name="pssw2" placeholder="Repite la contraseña">
       </span>
       <div class="col-4 buttonImg">
-        <label class="imgPerfil">Foto de perfil<input type="file" name="imgPerfil" accept="img/*"></label>
+        <label class="imgPerfil">Foto de perfil<input type="file" [(ngModel)]="regUser.imgPerfil" name="imgPerfil" accept="img/*" ></label>
       </div>
       <div class="buttonReg row">
         <button class="col-12 enviar" [disabled]="!registroForm.valid || !comparaPass()">Enviar</button>

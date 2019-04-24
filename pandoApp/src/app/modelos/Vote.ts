@@ -3,7 +3,7 @@ export class Vote {
 		public _id: number,
 		public title: String,
 		public description: String,
-		public options: [Object],
+		public options: [String],
 	) {
 	}
 }

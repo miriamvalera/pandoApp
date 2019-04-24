@@ -10,29 +10,21 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./resultados.component.scss']
 })
 export class ResultadosComponent implements OnInit {
-  _id = null;
-  title = null;
+  resultado = null;
+  opcion_escogida = null;
 
-  constructor(private _votingService:VotingService, private _route:ActivatedRoute) { }
+  constructor(private _votingService: VotingService, private _route: ActivatedRoute) { }
 
   ngOnInit() {
     this._route.params.subscribe(parametros => {
-      this._id = parseInt(parametros.id);
       console.log("parametros", parametros.id);
-      return this._id;
+
+      this._votingService.getById(parametros.id).subscribe(dato => {
+        console.log('dato:', dato);
+        this.resultado = dato;
+      });
       //console.log("this.username", this.username);
     });
-    // this._votingService.getById(ResultadosComponent._id).subscribe(dato => {
-    //   console.log('dato.id', dato);
-
-    //   for (let i = 0; i < dato.length; i++) {
-    //     if (dato[i].id == this._id) {
-    //       this.title = dato[i].name;
-    //       console.log("found", dato[i].name);
-    //     }
-    //   }
-      
-    // });
   }
 
 }
