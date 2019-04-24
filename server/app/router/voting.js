@@ -38,7 +38,11 @@ router.route('/votaciones')
 
     });
 
+<<<<<<< HEAD
 router.route('/resultados/:_id')
+=======
+router.route('/resultados/:id')
+>>>>>>> 1f75e90f0d7f457b3ba89d7fe3a28289c432e8e0
     .get(function (req, res) {
         //res.json({data: 'hola:'+req.params.pid});
         Vote.findById(req.params._id).then(aVotes => {
