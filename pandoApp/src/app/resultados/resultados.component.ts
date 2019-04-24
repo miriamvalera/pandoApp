@@ -12,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ResultadosComponent implements OnInit {
   resultado = null;
   title = null;
-
+  
   constructor(private _votingService: VotingService, private _route: ActivatedRoute) { }
 
   ngOnInit() {
