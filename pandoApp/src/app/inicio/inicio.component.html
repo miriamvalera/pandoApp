@@ -7,7 +7,7 @@
   <h5>¡Pon un PandoApp en tu vida!</h5>
 </div>
 <div>
- <form #tareaForm="ngForm" (ngSubmit)="guardarUsuario()">
+ <form #tareaForm="ngForm" (ngSubmit)="formularioLogin()">
     <div class="form-group">
       <label for="exampleInputEmail1">Email</label>
       <input [(ngModel)]="nuevoUsuario.email_username" name="email_username" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="pandoapp@pandoapp.com">
@@ -23,7 +23,7 @@
     </div>
     <div class="botoncito">
       <a [routerLink]="['/registro']">Registrate</a>
-      <button [routerLink]="['/contactos']" [disabled]="!tareaForm.valid" type="submit" class="btn btn-primary">Entrar</button>
+      <button [routerLink]="['/contactos']" [disabled]="!tareaForm.valid" class="btn btn-primary">Entrar</button>
     </div>
   </form>
 </div>
