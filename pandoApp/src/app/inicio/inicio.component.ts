@@ -22,8 +22,8 @@ export class InicioComponent implements OnInit {
 
   formularioLogin(){
     console.log('Nombre usuarix: ', this.nuevoUsuario);
-    this._logServ.addUsuarioAPI(this.nuevoUsuario).subscribe(login=>{
-      console.log('Contraseña: ',login);
+    this._logServ.login(this.nuevoUsuario).subscribe(data=>{
+      console.log('data: ',data);
     });
   }
  

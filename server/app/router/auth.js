@@ -7,6 +7,8 @@ router.route('/auth')
     .post(function (req, res) {
         let user = req.body.email_username;
         let password = req.body.pssw;
+        console.log("password",password);
+        console.log("user",user);
 
         Usuario.findOne({ email: user, pssw: password }, function (err, userLoggedIn) {
             if (err) res.status(500).send({ message: 'Server error' });
