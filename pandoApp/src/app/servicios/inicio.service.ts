@@ -10,9 +10,7 @@ import { environment } from 'src/environments/environment';
 export class InicioService {
 
   private _inicio =[
-    new Login('ricardo@ricardo.com', '123'),
-    new Login('ricardo@ricardo.com', '123'),
-    new Login('ricardo@ricardo.com', '123x')
+    new Login('ricardo@ricardo.com', '123')
   ];
   
 
@@ -23,6 +21,7 @@ export class InicioService {
   }
 
   addUsuarioAPI(datosLogin: Login):Observable<Login>{
+    console.log("asdas",datosLogin);
     return this._http.post<Login>(`${environment.API_URL}/auth`,datosLogin);
 
   }
