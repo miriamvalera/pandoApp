@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   API_URL:'http://172.27.96.127:8080/api',
-  CHAT_URL:'http://172.27.96.127:8080/'
+  CHAT_URL:'http://172.27.96.127:8080'
 
 };
 
