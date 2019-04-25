@@ -15,7 +15,7 @@
 
 		<div class="form-group pando-voting-formGroup mt-1"
 				 formArrayName="options"
-				 *ngFor="let option of votingForm.get('options').controls; let i = index;">
+				 *ngFor="let option of votingForm.get('options')?.controls; let i = index;"> 
 			<div [formGroupName]="i">
 				<div class="input-group mb-3">
 					<input type="text" class="form-control" placeholder="Opción" required

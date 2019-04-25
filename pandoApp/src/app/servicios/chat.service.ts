@@ -17,39 +17,40 @@ export class ChatService {
   private $msgsObserver = new BehaviorSubject(this._mensajes);
   username = 0;
 
-  constructor(private _http:HttpClient, private socket: Socket, private _chatService: ChatService, private _route: ActivatedRoute) {
-    this.socket.on('msg', (data) => {
+
+  constructor(private _http: HttpClient, private socket: Socket, private _chatService: ChatService, private _route: ActivatedRoute) {
+    
+
+    this.socket.on('msj', (data) => {
       console.log('data:', data, this._mensajes);
+      this.receiveMess(data);
+    });
+  }
+
+
+  receiveMess(data){
       this._mensajes.push(data);
       this.$msgsObserver.next(this._mensajes);
-    });
-   }
+    
+  }
 
-   sendMess(msg) {
-      this._mensajes.push(msg);
-      this.socket.emit('msg', msg);
-    }
+  sendMess(msg) {
 
-   
-    // found(data) {      
-    //  console.log("data", data.length);
-    //  for(let i=0; i< data.length;i++){
-    //       if (data[i].id == this.username) {
-    //         console.log("found", data[i].name);
-    //         return data[i].name;
-    //       }
-    //  }     
-      
+    console.log('enviando:', msg)
+    this._mensajes.push(msg);
+    this.socket.emit('msj', msg);
+    this.$msgsObserver.next(this._mensajes);
+  }
 
-    // }
-    getMensajes(): Observable<any> {
-      this._msgsObservable = this.$msgsObserver.asObservable();
-      console.log("this._msgsObservable", this._msgsObservable);
-      return this._msgsObservable;
-    }
 
-  getUsuariosChatAPI():Observable<Chat[]>{
-    return this._http.get<Chat[]>('http://172.27.96.127:8080/api/usuarios');
+  getMensajes(): Observable<any> {
+    this._msgsObservable = this.$msgsObserver.asObservable();
+    console.log("this._msgsObservable", this._msgsObservable);
+    return this._msgsObservable;
+  }
+
+  getUsuariosChatAPI(): Observable<Chat[]> {
+    return this._http.get<Chat[]>('http://172.27.96.127:8080/api/mensajes');
   }
 
 }

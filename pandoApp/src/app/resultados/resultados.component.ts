@@ -25,7 +25,6 @@ export class ResultadosComponent implements OnInit {
       });
       //console.log("this.username", this.username);
     });
-
   }
 
 }

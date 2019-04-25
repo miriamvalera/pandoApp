@@ -6,9 +6,7 @@ const MensajesSchema   = new Schema({
     idOrig: String,
     idDest: String,
     texto: String,
-    msgHora: String
-    
-  
+    fecha: String    
 });
 
 module.exports = mongoose.model('Msj', MensajesSchema);

@@ -16,8 +16,10 @@ import { ChatComponent } from './chat/chat.component';
 import { LogoAnimadoComponent } from './logo-animado/logo-animado.component';
 import { ConversacionComponent } from './chat/conversacion/conversacion.component';
 import { ResultadosComponent } from './resultados/resultados.component';
+import {environment} from '../environments/environment';
 
-// const config: SocketIoConfig = { url: 'http://172.27.96.127:8080/mensajes', options: {} };
+
+const config: SocketIoConfig = { url: `${environment.CHAT_URL}/mensajes`, options: {} };
 
 @NgModule({
   declarations: [

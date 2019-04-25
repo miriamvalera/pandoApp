@@ -1,7 +1,8 @@
 curl -X POST http://localhost:8080/api/users -d "{\"name\":\"ricardo\",\"email\":\"ricardo@r.com\"}" -H "Content-Type:application/json"
 curl -X POST http://localhost:8080/api/users -d "{\"name\":\"miriam\",\"email\":\"miriam@r.com\"}" -H "Content-Type:application/json"
 curl -X POST http://localhost:8080/api/users -d "{\"name\":\"jose\",\"email\":\"jose@r.com\"}" -H "Content-Type:application/json"
-curl -X POST http://localhost:8080/api/users -d "{\"name\":\"noemi\",\"email\":\"noemi@r.com\"}" -H "Content-Type:application/json"
+
+curl -X POST http://172.27.96.127:8080/api/mensajes -d "{\"idOrig\":\"5cbedb1292519c19c87263d8\",\"idDest\":\"5cbee5e192519c19c87263df\",\"texto\":Hola\",\"fecha":\"12:02\"}" -H "Content-Type:application/json"
 
 curl -X POST http://localhost:8080/api/pets -d "{\"nombre\":\"gina\",\"foto\":\"https://www.duiops.net/seresvivos/photogallery/photo00011389/033__.JPG\",\"edad\":5}" -H "Content-Type:application/json" 
 

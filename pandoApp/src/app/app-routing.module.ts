@@ -17,7 +17,7 @@ const routes: Routes = [
   {path:'usuarios', component: ContactosComponent, pathMatch:'full'},
   {path:'votaciones', component: VotacionesComponent, pathMatch:'full'}, 
   {path:'votaciones/:id', component: ResultadosComponent, pathMatch:'full'}, 
-  {path:'conversacion/:id', loadChildren:'./chat/chat.module#ChatModule' },
+  {path:'conversacion/:idOrig/:idDest', loadChildren:'./chat/chat.module#ChatModule' },
   { path: '', redirectTo: 'inicio', pathMatch: 'full'}
 ];
 

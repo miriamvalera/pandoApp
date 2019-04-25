@@ -3,6 +3,7 @@ import { ChatService } from 'src/app/servicios/chat.service';
 import { Observable, Subscription } from 'rxjs';
 import { Mensage } from 'src/app/modelos/mensaje';
 import { ActivatedRoute } from '@angular/router';
+import { ContactosService } from 'src/app/servicios/contactos.service';
 //import { startWith } from 'rxjs/operators';
 
 @Component({
@@ -18,39 +19,42 @@ export class ConversacionComponent implements OnInit {
 
   msgtxt = '';
   username = null;
-  userid = null;
   losmsgs = null;
 
   idMsg = null;
   idOrig = null;
   idDest = null;
   texto = '';
-  msgHora = null;   
+  msgHora = null;
 
-  constructor(private _chatService: ChatService, private _route: ActivatedRoute) { }
+  constructor(private _chatService: ChatService, private _route: ActivatedRoute, private _contactosServ: ContactosService) { }
 
   ngOnInit() {
 
     this._route.params.subscribe(parametros => {
-      this.userid = parseInt(parametros.id);
-      console.log("parametros", parametros.id);
-      return this.userid;
-      //console.log("this.username", this.username);
+      this.idOrig = parametros.idOrig;
+      this.idDest = parametros.idDest;
+      //console.log("parametros", parametros);
     });
 
-    this._chatService.getUsuariosChatAPI().subscribe(dat => {
-      console.log("data.id ", dat);
-
+    this._contactosServ.getUsuariosAPI().subscribe(dat => {
+      //console.log("usuariosDelServ", dat);
       for (let i = 0; i < dat.length; i++) {
-        if (dat[i].id == this.userid) {
+        //console.log("found1", dat[i]._id);
+        if (dat[i]._id == this.idDest) {
           this.username = dat[i].name;
-          console.log("found", dat[i].name);
+          //console.log("found", this.username);
         }
       }
     });
 
     this._chatService.getMensajes().subscribe(data => {
-      this.losmsgs = data;
+      this.losmsgs = data.filter(unMs => {
+        if (
+          (unMs.idDest == this.idOrig && unMs.idOrig == this.idDest) || (unMs.idOrig==this.idOrig && unMs.idDest==this.idDest)
+        ) return true;
+        else return false;
+      });
     });
   }
 
@@ -58,7 +62,7 @@ export class ConversacionComponent implements OnInit {
   }
 
   envia() {
-    console.log("usernameeee", this.username);
-    this._chatService.sendMess({ user: this.username, txt: this.msgtxt });
+    // console.log("usernameeee", this.username);
+    this._chatService.sendMess({ user: this.username, txt: this.msgtxt, idOrig: this.idOrig, idDest: this.idDest });
   }
 }
