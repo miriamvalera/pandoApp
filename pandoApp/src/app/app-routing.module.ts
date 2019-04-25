@@ -5,7 +5,6 @@ import { ContactosComponent } from './contactos/contactos.component';
 import { RegistroComponent } from './registro/registro.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { ChatComponent } from './chat/chat.component';
-import { ConversacionComponent } from './chat/conversacion/conversacion.component';
 import { ResultadosComponent } from './resultados/resultados.component';
 
 const routes: Routes = [

@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Socket } from 'ngx-socket-io';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { Chat } from '../modelos/chat';
-import { Mensage } from '../modelos/mensaje';
 import { ActivatedRoute } from '@angular/router';
 
 
