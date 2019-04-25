@@ -9,20 +9,11 @@ import { environment } from 'src/environments/environment';
 })
 export class InicioService {
 
-  private _inicio =[
-    new Login('ricardo@ricardo.com', '123')
-  ];
-  
-
   constructor(private _http:HttpClient) { }
 
-  getUsuarios():Login[]{
-    return this._inicio;
-  }
-
-  addUsuarioAPI(datosLogin: Login):Observable<Login>{
-    console.log("asdas",datosLogin);
-    return this._http.post<Login>(`${environment.API_URL}/auth`,datosLogin);
+  login(datosLogin: Login):Observable<any>{
+    console.log("datosLogin:",datosLogin);
+    return this._http.post<any>(`${environment.API_URL}/auth`,datosLogin);
 
   }
 
